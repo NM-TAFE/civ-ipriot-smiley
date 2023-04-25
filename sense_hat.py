@@ -12,8 +12,9 @@ import tkinter as tk
 DEFAULT_RGB = [(255, 255, 255)] * 64
 
 
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(funcName)s - %(lineno)d - %(message)s',
-                    level=logging.DEBUG)
+logging.basicConfig(format="%(asctime)s.%(msecs)03d [%(levelname)s] %(name)s (%(filename)s:%(lineno)d): %(message)s",
+                    level=logging.INFO,
+                    datefmt="%Y-%m-%d %H:%M:%S")
 
 
 class SenseHat:
@@ -29,7 +30,8 @@ class SenseHat:
         self.logger.debug('Started mock SenseHAT process')
 
     def run_hat_gui(self, initial_rgb_values):
-        self.logger.debug('Starting mock SenseHAT GUI')
+        """tkinter GUI for the mock SenseHAT. Tkinter is not thread-safe, so we need to run it in a separate process."""
+        self.logger.debug('Starting GUI')
         self.rgb_values = initial_rgb_values
         # self._low_light = False
 
@@ -46,7 +48,8 @@ class SenseHat:
         self.root.mainloop()
 
     def refresh_gui_from_queue(self):
-        # self._set_pixels(self.rgb_values)
+        """Updates the GUI using a queue for communication with the main process."""
+        # TODO: investigate if using a queue is mandatory
         with contextlib.suppress(queue.Empty):
             message, payload = self.queue.get_nowait()
             if message == 'set_pixels':
@@ -56,6 +59,7 @@ class SenseHat:
         self.root.after(1000, SenseHat.refresh_gui_from_queue, self)
 
     def create_led_matrix(self):
+        """Creates the LED matrix for the GUI using a grid of tkinter Frames."""
         self.logger.debug('Creating mock SenseHAT LED matrix')
         for i, j in itertools.product(range(8), range(8)):
             frame = tk.Frame(self.root, width=30,
@@ -75,13 +79,16 @@ class SenseHat:
         self.logger.debug(f'{self.rgb_values=}')
         for i, rgb in enumerate(rgb_values):
             self.led_matrix[i].config(bg='#%02x%02x%02x' % rgb)  # type: ignore
+            # config is a method of tkinter.Frame, but mypy thinks it is a property
 
     def set_pixels(self, rgb_values):
+        """Emulates the SenseHAT.set_pixels method"""
         self.logger.debug("set_pixels called")
         self.queue.put(('set_pixels', rgb_values))
 
     @property
     def low_light(self):
+        """Emulates the SenseHAT.low_light property"""
         return self._low_light
 
     @low_light.setter
@@ -92,7 +99,8 @@ class SenseHat:
         self.root.destroy()
 
 
-def main():
+def main():  # sourcery skip: extract-duplicate-method
+    """Used only to quickly test and demonstrate the mock SenseHAT class"""
     from signal import pause
     rgb_values = [(255, 0, 0)] * 64
 
@@ -119,7 +127,7 @@ def main():
     time.sleep(1)
     mock_sense_hat.set_pixels([(0, 0, 255)] * 64)
 
-    # Keep the main thread alive
+    # Keep the main thread alive FOREVER
     pause()
 
 
