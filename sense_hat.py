@@ -60,7 +60,7 @@ class SenseHat:
             frame = tk.Frame(self.root, width=30,
                              height=30, bd=1, relief='solid')
             frame.grid(row=i, column=j)
-            self.led_matrix[i*8 + j] = frame
+            self.led_matrix[i*8 + j] = frame  # type: ignore
 
     def _set_pixels(self, rgb_values):
         self.logger.debug('Setting mock SenseHAT LED matrix pixel values')
@@ -72,7 +72,7 @@ class SenseHat:
         self.rgb_values = rgb_values
 
         for i, rgb in enumerate(rgb_values):
-            self.led_matrix[i].config(bg='#%02x%02x%02x' % rgb)
+            self.led_matrix[i].config(bg='#%02x%02x%02x' % rgb)  # type: ignore
 
     def set_pixels(self, rgb_values):
         self.logger.debug("set_pixels called")
