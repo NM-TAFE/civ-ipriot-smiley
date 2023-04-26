@@ -101,7 +101,7 @@ class SenseHat:
 
 def main():  # sourcery skip: extract-duplicate-method
     """Used only to quickly test and demonstrate the mock SenseHAT class"""
-    from signal import pause
+    # from signal import pause
     rgb_values = [(255, 0, 0)] * 64
 
     mock_sense_hat = SenseHat()
@@ -128,7 +128,7 @@ def main():  # sourcery skip: extract-duplicate-method
     mock_sense_hat.set_pixels([(0, 0, 255)] * 64)
 
     # Keep the main thread alive FOREVER
-    pause()
+    time.sleep(60)
 
 
 if __name__ == '__main__':

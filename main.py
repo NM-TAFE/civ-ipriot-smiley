@@ -7,8 +7,9 @@ from happy import Happy
 
 if __name__ == '__main__':
     # This is only needed if you have not deleted sense_hat.py
-    from multiprocessing import freeze_support
-    freeze_support()
+    # and only in some environments - uncomment only if you have errors
+    # from multiprocessing import freeze_support
+    # freeze_support()
     ############################################################
 
     # Create a happy smiley, which is a subclass of Smiley
