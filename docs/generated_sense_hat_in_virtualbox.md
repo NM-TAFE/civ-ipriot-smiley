@@ -1,4 +1,4 @@
-# Creating a virtual SenseHAT on Debian
+# Using a SenseHAT emulator on a [virtual] Debian Linux instance
 The following instructions are for Windows users without access to a SenseHAT/Raspberry PI.
 
 ⚠️ **Note**: that you **do not** have to create a virtual machine to successfully complete the unit and this activity is optional. If you do not have access to a SenseHAT and are unsure what to do, please contact your lecturer.
