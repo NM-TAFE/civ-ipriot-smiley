@@ -2,7 +2,7 @@
 
 These instructions cover how to deploy the code from Pycharm on Windows to a connected Raspberry pi. 
 
-> **⚠️ Note:** These instructions are specific to North Metro TAFE, TDM-networked Raspberry PIs
+> **⚠️ Note:** These instructions are specific to North Metro TAFE, TDM-networked Raspberry pi's
 
 The instructions assume that:
 
@@ -14,7 +14,7 @@ The instructions assume that:
 Pycharm integrates with `ssh` and `sftp` to provide the following:
 
 - With `ssh`: Run code on a remote machine using its Python interpreter.
-- With `sftp`: Synchronize the files on your local machine with those on the remote machine so when you run code remotely it is in sync with the local code.
+- With `sftp`: Synchronize the files on your local machine with those on the remote machine so when you run code remotely it is in sync with the local source.
 
 If you have never worked in a remote environment before note this workflow (which is general):
 
@@ -94,5 +94,9 @@ Important steps ahead. Read *carefully*.
 
 It may take a couple of minutes for your settings to synchronize for  the first time.
 
+#### Optimize remote configuration
 
+TODO: add detailed instructions
+
+![Placeholder](images/remote_settings.png)
 
