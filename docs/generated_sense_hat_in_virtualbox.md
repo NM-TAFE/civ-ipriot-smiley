@@ -117,6 +117,7 @@ You can now use Python to create and run programs that utilize the sense-hat emu
       nano sense_hat_example.py
       ```
    b. Copy and paste the following example code into the editor:
+   
       ```python
       from sense_hat import SenseHat
       import time
@@ -153,7 +154,7 @@ You have now successfully created a virtual machine running Ubuntu, installed th
 14. SSH from your Windows machine using the built-in SSH client:
    a. Press `Win + X` on your keyboard and select "Windows PowerShell" or "Windows Terminal" from the menu.
    b. In the PowerShell or Terminal window, type the following command, replacing `<IP_ADDRESS>` with the IP address of the virtual machine noted in step 13, and `<USERNAME>` with your Ubuntu virtual machine's username:
-      ```
+      ```bash
       ssh <USERNAME>@<IP_ADDRESS>
       ```
    c. You may see a security warning regarding the authenticity of the host. Type "yes" and press Enter to continue.
