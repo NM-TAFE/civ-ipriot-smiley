@@ -2,7 +2,7 @@
 If you have access to a SenseHAT (either via a Raspberry Pi or a SenseHAT emulator), you can use the real SenseHAT class instead of the mock SenseHAT class.
 That is, delete the sense_hat.py file that is included in this bundle."""
 import time
-
+from sad import Sad
 from happy import Happy
 
 if __name__ == '__main__':
@@ -13,7 +13,7 @@ if __name__ == '__main__':
     ############################################################
 
     # Create a happy smiley, which is a subclass of Smiley
-    smiley = Happy()
+    smiley = Sad()
 
     # This is a form of #polymorphism, as the Happy smiley class
     # does not have a method called .show(). This means that
