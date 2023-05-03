@@ -42,7 +42,7 @@ cd civ-ipriot-smiley
 
 ```bash
 
-git checkout -b at2-part1
+git checkout -b at2-part2
 ```
 
  
@@ -67,7 +67,7 @@ git commit -m "Addressed requirements of the porfolio"
 
 ```bash
 
-git push origin at2-part1
+git push origin at2-part2
 ```
 
 ### After you have submitted
