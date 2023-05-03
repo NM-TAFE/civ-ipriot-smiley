@@ -70,6 +70,52 @@ git commit -m "Addressed requirements of the porfolio"
 git push origin at2-part1
 ```
 
+### Oh fork: what to do if you didn't fork
+> Also, what is a fork anyway?
+
+A fork creates a personal copy of a repository on your own github account.
+What makes the fork a fork (rather than a plain old copy) is that the fork 
+still refers to the repository from whence it came as its `upstream`.
+
+This allows you to still pull from the upstream or push from it.
+
+At a technical level, a clone of a forked repository has your
+copy of the repository as its `origin` and a reference to the forked 
+repository as `upstream`.
+
+If you cloned the original repository, and you want to keep the clone but 
+change it to use your copy:
+
+1. Create a fork on GitHub and copy the name of your forked repository. Usually:
+`https://github.com/<YOUR_USERNAME>/civ-ipriot-smiley.git`
+2. Go to your clone's local directory. 
+3. Run the following command to verify that your current clone is pointing 
+   at the NM-TAFE repo:
+
+```bash
+git remote -v
+```
+
+4. Change the origin to your personal upstream repository:
+
+```bash
+git remote set-url origin https://github.com/YOUR_USERNAME/civ-ipriot-smiley.git
+```
+Replace `YOUR_USERNAME` with, you guessed it, your GitHub username.
+
+5. Add the original repository as the upstream:
+
+```bash
+git remote add upstream https://github.com/NM-TAFE/civ-ipriot-smiley.git
+```
+
+6. Optionally, you can fetch any changes that have been made to the original 
+   repository by running:
+
+```bash
+git fetch upstream
+```
+
 ### After you have submitted
 
 You may want to merge the changes back to your `main` branch.
