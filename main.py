@@ -21,6 +21,7 @@ if __name__ == '__main__':
     # the method .show() of the base class {Smiley} will be
     # used in stead. There is no need to specify the base
     # class, like in other, statically typed, languages.
+    smiley.complection(smiley.YELLOW, smiley.BLANK)
     smiley.show()
 
     # Just a short delay

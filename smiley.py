@@ -12,9 +12,13 @@ class Smiley:
         # We have encapsulated the SenseHat object
         self.sense_hat = SenseHat()
 
-        Y = self.YELLOW
-        O = self.BLANK
-        self.pixels = [
+        self.pixels, self.colour = self.complection()
+
+
+    def complection(self, colour=GREEN, blank=BLANK):
+        Y = colour
+        O = blank
+        pixels = [
             O, Y, Y, Y, Y, Y, Y, O,
             Y, Y, Y, Y, Y, Y, Y, Y,
             Y, Y, Y, Y, Y, Y, Y, Y,
@@ -24,6 +28,7 @@ class Smiley:
             Y, Y, Y, Y, Y, Y, Y, Y,
             O, Y, Y, Y, Y, Y, Y, O,
         ]
+        return pixels, colour
 
     def dim_display(self, dimmed=True):
         """
