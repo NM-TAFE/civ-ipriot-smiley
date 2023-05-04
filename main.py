@@ -35,7 +35,7 @@ if __name__ == '__main__':
     sad = Sad()
     sad.show()
     time.sleep(1)
-    smiley.blink()
+    sad.blink()
 
 
 
