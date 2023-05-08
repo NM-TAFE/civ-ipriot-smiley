@@ -34,8 +34,8 @@ class Sad(Smiley):
     def blink(self, delay=0.25):
         """
         Make the sad smiley blink once with a certain delay (in s).
-        This is the implementation of the abstract method from the
-        Blinkable abstract class.
+        
+        This is taken from Happy class
 
         :param delay: Delay in seconds
         """
