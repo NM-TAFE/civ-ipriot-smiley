@@ -34,7 +34,7 @@ if __name__ == '__main__':
     smiley.blink()
 
     sad = Sad()
-    sad.change_complexation(smiley.BLUE, smiley.BLANK)
+    #sad.change_complexation(smiley.BLUE, smiley.BLANK)
     sad.show()
     time.sleep(1)
     sad.blink()
