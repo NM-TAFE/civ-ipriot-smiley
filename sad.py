@@ -1,3 +1,4 @@
+import time
 from smiley import Smiley
 
 
@@ -14,7 +15,12 @@ class Sad(Smiley):
         """
         mouth = [49, 54, 42, 43, 44, 45]
         for pixel in mouth:
-            self.pixels[pixel] = self.BLANK
+            self.pixels[pixel] = self.contrast
+
+    def change_complexation(self, colour=Smiley.GREEN, contrast=Smiley.RED):
+            self.complexation(colour,contrast)
+            self.draw_mouth()
+            self.draw_eyes()
 
     def draw_eyes(self, wide_open=True):
         """
@@ -23,4 +29,18 @@ class Sad(Smiley):
         """
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
-            self.pixels[pixel] = self.BLANK if wide_open else self.YELLOW
+            self.pixels[pixel] = self.contrast if wide_open else self.colour
+
+    def blink(self, delay=0.25):
+        """
+        Make the sad smiley blink once with a certain delay (in s).
+        
+        This is taken from Happy class
+
+        :param delay: Delay in seconds
+        """
+        self.draw_eyes(wide_open=False)
+        self.show()
+        time.sleep(delay)
+        self.draw_eyes(wide_open=True)
+        self.show()
