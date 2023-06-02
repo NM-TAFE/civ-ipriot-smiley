@@ -8,11 +8,12 @@ class Smiley:
     YELLOW = (255, 255, 0)
     BLANK = (0, 0, 0)
 
-    def __init__(self):
+    def __init__(self, complexion=YELLOW):
         # We have encapsulated the SenseHat object
         self.sense_hat = SenseHat()
+        self.my_complexion = complexion
 
-        C = self.complexion()
+        C = complexion
         O = self.BLANK
         self.pixels = [
             O, C, C, C, C, C, C, O,
@@ -30,7 +31,7 @@ class Smiley:
         Get the colour to draw the smiley with.
         :returns: a tuple of ints representing the colour as RGB value
         """
-        return self.YELLOW
+        return self.my_complexion
 
     def dim_display(self, dimmed=True):
         """
