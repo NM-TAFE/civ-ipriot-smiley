@@ -5,6 +5,7 @@ import time
 
 from happy import Happy
 from sad import Sad
+from angry import Angry
 
 if __name__ == '__main__':
     # This is only needed if you have not deleted sense_hat.py
@@ -13,8 +14,9 @@ if __name__ == '__main__':
     # freeze_support()
     ############################################################
 
-    # Create a happy smiley and a sad smiley and make them both blink.
-    for smiley in (Happy(), Sad()):
+    # Create a happy smiley, a sad smiley and an angry smiley, and make
+    # each of them blink.
+    for smiley in (Happy(), Sad(), Angry()):
         smiley.show()
         time.sleep(1)
         smiley.blink()
