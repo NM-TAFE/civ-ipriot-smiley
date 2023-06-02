@@ -5,6 +5,10 @@ from blinkable import Blinkable
 
 class Sad(Smiley, Blinkable):
     def __init__(self):
+        """
+        Initialise the smiley with a blue complexion, and draw its mouth and
+        eyes.
+        """
         super().__init__(complexion=self.BLUE)
 
         self.draw_mouth()
@@ -12,7 +16,7 @@ class Sad(Smiley, Blinkable):
 
     def draw_mouth(self):
         """
-        Method that draws the mouth on the standard faceless smiley.
+        Method that draws a sad mouth onto the standard faceless smiley.
         """
         mouth = [49, 54, 42, 43, 44, 45]
         for pixel in mouth:

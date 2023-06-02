@@ -15,7 +15,7 @@ class Angry(Smiley, Blinkable):
 
     def draw_mouth(self):
         """
-        Method that draws a sad mouth on the angry smiley.
+        Method that draws a sad mouth onto the standard faceless smiley.
         """
         mouth = [49, 54, 42, 43, 44, 45]
         for pixel in mouth:

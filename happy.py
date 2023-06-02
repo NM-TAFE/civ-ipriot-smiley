@@ -13,6 +13,7 @@ class Happy(Smiley, Blinkable):
     method.See {meth:blink} below.
     """
     def __init__(self):
+        """Initialise the smiley by drawing its mouth and eyes."""
         super().__init__()
 
         self.draw_mouth()
@@ -20,7 +21,7 @@ class Happy(Smiley, Blinkable):
 
     def draw_mouth(self):
         """
-        Method that draws the mouth on the standard faceless smiley.
+        Method that draws a smiling mouth onto the standard faceless smiley.
         """
         mouth = [41, 46, 50, 51, 52, 53]
         for pixel in mouth:
@@ -28,7 +29,7 @@ class Happy(Smiley, Blinkable):
 
     def draw_eyes(self, wide_open=True):
         """
-        Method that draws the eyes (open or closed) on the standard smiley.
+        Method that draws the eyes (open or closed) onto the standard smiley.
         :param wide_open: True if eyes opened, False otherwise
         """
         eyes = [10, 13, 18, 21]
