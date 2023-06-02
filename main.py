@@ -13,8 +13,8 @@ if __name__ == '__main__':
     # freeze_support()
     ############################################################
 
-    # Create a sad smiley and make it blink.
-    sad_smiley = Sad()
-    sad_smiley.show()
-    time.sleep(1)
-    sad_smiley.blink()
+    # Create a happy smiley and a sad smiley and make them both blink.
+    for smiley in (Happy(), Sad()):
+        smiley.show()
+        time.sleep(1)
+        smiley.blink()
