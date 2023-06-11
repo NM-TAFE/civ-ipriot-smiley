@@ -1,4 +1,5 @@
 import time
+
 from blinkable import Blinkable
 from smiley import Smiley
 
@@ -12,12 +13,19 @@ class Happy(Smiley, Blinkable):
     Blinkable, this class promises to implement the abstract
     method.See {meth:blink} below.
     """
-    def __init__(self):
-        super().__init__()
+    def __init__(self, describe=False):
+        super().__init__(describe=describe)
 
         self.draw_mouth()
         self.draw_eyes()
 
+    def describe_state(self):
+        """
+        Generate a detailed textual description based on the state.
+        """
+        eyes = "open" if self.pixels[10] == self.BLANK else "closed"
+        return f"Happy face with {eyes} eyes"
+    
     def draw_mouth(self):
         """
         Method that draws the mouth on the standard faceless smiley.
@@ -34,6 +42,8 @@ class Happy(Smiley, Blinkable):
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
             self.pixels[pixel] = self.BLANK if wide_open else self.YELLOW
+        if self.describe_state:
+            print("Eyes are now", "open" if wide_open else "closed")
 
     def blink(self, delay=0.25):
         """
