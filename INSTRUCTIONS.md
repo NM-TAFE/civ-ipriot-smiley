@@ -88,4 +88,4 @@ c. Suggest an easy, albeit naive, way to change the emotion of a smiley (e.g., m
 
 ---
 
-Go ahead and change the implementation as per the instructions above.
+Go ahead and change the implementation as per the instructions in the Happy and Sad class.
