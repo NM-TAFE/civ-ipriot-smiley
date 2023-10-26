@@ -19,7 +19,7 @@ To clone the repository, use the following command:
 git clone https://github.com/NM-TAFE/civ-ipriot-smiley.git
 ```
 
-The project contains various classes. Some are "base classes" (also known as super classes), and some are "subclasses," derived from the base classes.
+The project contains various classes. Some are "base classes" (also known as superclasses), and some are "subclasses," derived from the base classes.
 
 ---
 
@@ -66,15 +66,14 @@ b. Create a new method called `blink` in the `Sad` class:
 c. Implement the code for the `blink` method. Take guidance from the `Happy` class. Focus on outputting a print statement to signify a "blink," and use the delay for the speed.
 d. Test the code on your Raspberry Pi or with the provided classes. Ensure the sad smiley blinks accordingly.
 
-> Note: Double-check wording for accessibility for people with visual impairment.
 
 ### If It Walks Like a Duck…
 
 Answer the following:
 
-a. What type of class is `Blinkable`? (Hint: Check its super class.)
+a. What type of class is `Blinkable`? (Hint: Check its superclass.)
 b. What is another name for a class like `Blinkable`, which may be implemented by other classes?
-c. Which OO principle does the answer from the previous question exemplify? Choose from: Abstraction, Polymorphism, Inheritance, and Encapsulation.
+c. Which OO principle does the answer from the previous question exemplify? Choose from Abstraction, Polymorphism, Inheritance, and Encapsulation.
 d. Explain how you could implement blinking in `Sad` without using `Blinkable`.
 e. What is this capability called in Python, and why doesn't it work in some languages like C#?
 
@@ -88,4 +87,4 @@ c. Suggest an easy, albeit naive, way to change the emotion of a smiley (e.g., m
 
 ---
 
-Go ahead and change the implementation as per the instructions in the Happy and Sad class.
+Go ahead and change the implementation per the Happy and Sad class instructions.
