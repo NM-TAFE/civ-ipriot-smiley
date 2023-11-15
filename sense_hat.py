@@ -1,4 +1,5 @@
-"""Mock SenseHAT class. If you have access to a SenseHAT (either via a Raspberry Pi or a SenseHAT emulator), you can use the real SenseHAT class instead of this one.)
+"""Mock SenseHAT class. If you have access to a SenseHAT (either via a Raspberry Pi or a SenseHAT emulator), you can use the real SenseHAT class
+instead of this one.)
 To do that DELETE this file so that it will not shadow the sense_hat class installed in your system.
 You do not need to understand this code to use it for the smiley exercise"""
 import contextlib
