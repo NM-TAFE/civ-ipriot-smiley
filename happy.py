@@ -37,7 +37,7 @@ class Happy(Smiley, Blinkable):
         Method that draws the eyes (open or closed) on the standard smiley.
         :param wide_open: True if eyes opened, False otherwise
         """
-        description = f"{self.mood} eyes open" else "happy eyes closed"
+        description = f"{self.mood} eyes open" if wide_open else "happy eyes closed"
         print(description)
         eyes = [10, 13, 18, 21]
         for pixel in eyes:

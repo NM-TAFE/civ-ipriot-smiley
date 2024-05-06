@@ -1,0 +1,10 @@
+2023-11-09 16:24:08.683 [INFO] sense_hat (sense_hat.py:24): Starting mock SenseHAT
+2023-11-09 16:24:09.874 Python[53828:7531696] WARNING: Secure coding is not enabled for restorable state! Enable secure coding by implementing NSApplicationDelegate.applicationSupportsSecureRestorableState: and returning YES.
+Drawing a Happy, face: 😀
+Happy eyes open
+Setting the pixel values in the display
+Beginning blink
+happy eyes closed
+Setting the pixel values in the display
+Happy eyes open
+Setting the pixel values in the display
