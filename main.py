@@ -4,6 +4,8 @@ That is, delete the sense_hat.py file that is included in this bundle."""
 import time
 
 from happy import Happy
+from sad import Sad
+from angry import Angry
 
 if __name__ == '__main__':
     # This is only needed if you have not deleted sense_hat.py
@@ -13,7 +15,9 @@ if __name__ == '__main__':
     ############################################################
 
     # Create a happy smiley, which is a subclass of Smiley
-    smiley = Happy()
+    #smiley = Happy()
+    #smiley = Sad()
+    smiley = Angry()
 
     # This is a form of #polymorphism, as the Happy smiley class
     # does not have a method called .show(). This means that
