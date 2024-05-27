@@ -1,4 +1,5 @@
 # Smiley: Intro to OOP and IoT
+> :warning: If you are using the GitHub Classroom version of this assessment, you must address the requirements in `knowledge_and_evidence.md`. Otherwise, please use the workbook supplied on Blackboard.
 
 Demonstrates key Python OOP concepts and provides the first project's starting code.
 
