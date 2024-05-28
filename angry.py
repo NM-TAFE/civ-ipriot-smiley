@@ -3,9 +3,9 @@ from blinkable import Blinkable
 from smiley import Smiley
 
 
-class Sad(Smiley, Blinkable):
+class Angry(Smiley, Blinkable):
     def __init__(self):
-        super().__init__(complexion=self.BLUE)
+        super().__init__(complexion=self.RED)
 
         self.draw_mouth()
         self.draw_eyes()
@@ -23,9 +23,9 @@ class Sad(Smiley, Blinkable):
         Method that draws the eyes (open or closed) on the standard smiley.
         :param wide_open: True if eyes opened, False otherwise
         """
-        eyes = [10, 13, 18, 21]
+        eyes = [9, 14, 18, 21]
         for pixel in eyes:
-            self.pixels[pixel] = self.BLANK if wide_open else self.BLUE
+            self.pixels[pixel] = self.BLANK if wide_open else self.RED
 
     def blink(self, delay=0.25):
         self.draw_eyes(wide_open=False)
