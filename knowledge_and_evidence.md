@@ -1,14 +1,15 @@
 # Evidence and Knowledge
 
-This document provides the structure to evidence your relevant knowledge and skills for this activity.
+This document includes instructions and knowledge questions that must be completed to receive a Competent grading on this portfolio task. 
 
 ## Required evidence
 
 ### Answer all questions in this document
 
 - Each answer should be complete, well-articulated, and within the specified word count limits (if added) for each question.
-- Please make sure all external sources are properly cited.
-- You must use your own words. If you use generative AI in any capacity, you must include your full chat transcripts.
+- Please make sure **all** external sources are properly cited.
+- You must **use your own words**. You'll need to include your full chat transcripts if you use generative AI in any capacity.
+- Generative AI hallucinates, is not an authoritative source
 
 ### Make all the required modifications to the code
 
@@ -20,16 +21,16 @@ This document provides the structure to evidence your relevant knowledge and ski
 ![Example Running Code](screenshots/screenshot1.png)
 ```
 
-- You must upload the code into this GitHub repository.
+- You must upload the code into your GitHub repository.
 - While you can use a branch, your code should be in main when you submit.
 - Upload a zip of this repository to Blackboard when you are ready to submit.
 - Feedback will be provided via GitHub, but you will be notified of your result via Blackboard
 
 ### Use of Raspberry Pi and SenseHat
 
-The use of Raspberry Pi and SenseHat is optional for this activity. You can use the included ` sense_hat.py` file to simulate the SenseHat on your computer.
+Raspberry Pi or SenseHat is **optional** for this activity. You can use the included `sense_hat.py` file to simulate the SenseHat on your computer.
 
-If you use a PI, please **delete** the `sense_hat.py` file.
+If you use a Pi, please **delete** the `sense_hat.py` file.
 
 ### Accessible version of the code
 
@@ -43,11 +44,12 @@ Address the following tasks and questions based on the code provided in this rep
 
 ### Set up the project locally
 
-1. Clone this repository
-2. Run the project locally by executing the `main.py` file
-3. Evidence this by providing screenshots of the project directory structure and the output of the `main.py` file
+1. Fork this repository (if not using GitHub classrooms)
+2. Clone your repository locally
+3. Run the project locally by executing the `main.py` file
+4. Evidence this by providing screenshots of the project directory structure and the output of the `main.py` file
 
-![Local Execution](screenshots/local_setup.png)
+![Local Execution](screenshots/CREATE_A_SCREENSHOT_OF_YOUR_local_setup.png)
 
 If you are running on a Raspberry Pi, you can use the following command to run the project and then screenshot the result:
 
@@ -60,7 +62,9 @@ python3 main.py
 
 > Note: Ignore the `sense_hat.py` file when answering the questions below
 
-1. List all the classes you identified in the project. Indicate which classes are base classes and which are subclasses. For subclasses, identify all direct base classes. Use the following table for your answers:
+1. List all the classes you identified in the project. Indicate which classes are base classes and which are subclasses. For subclasses, identify all direct base classes.
+  
+  Use the following table for your answers:
 
 | Class Name | Super or Sub? | Direct parent(s) |
 | ---------- | ------------- | ---------------- |
@@ -70,13 +74,15 @@ python3 main.py
 
 ...
 
-2. Explain the concept of 'abstraction' as demonstrated in this project. (Max 150 words)
+2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
 > Your answer here
+> 
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
 > Your answer here
+> 
 
 ### Compare and contrast classes
 
@@ -84,21 +90,28 @@ Compare and contrast the classes Happy and Sad.
 
 1. What is a key difference between the two classes?
    > Your answer here
+   > 
 2. What are the key similarities?
    > Your answer here
+   > 
 3. What difference stands out the most to you and why?
    > Your answer here
-4. How do these differences affect the functionality of these classes
+   > 
+4. How does this difference affect the functionality of these classes
    > Your answer here
+   > 
 
 ### Where is the Sense(Hat) in the code?
 
 1. Which class(s) utilize the functionality of the SenseHat?
    > Your answer here
+   > 
 2. Which of these classes directly interact with the SenseHat functionalities?
    > Your answer here
+   > 
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
    > Your answer here
+   > 
 
 ### Sad Smileys Can’t Blink (Or Can They?)
 
