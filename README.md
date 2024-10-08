@@ -73,11 +73,10 @@ A fork creates a personal copy of a repository on your own github account.
 What makes the fork a fork (rather than a plain old copy) is that the fork
 still refers to the repository from whence it came as its `upstream`.
 
-This allows you to still pull from the upstream or push from it.
+This still allows you to pull or push from the upstream.
 
-At a technical level, a clone of a forked repository has your
-copy of the repository as its `origin` and a reference to the forked
-repository as `upstream`.
+At a conceptual level, a clone of a forked repository has your
+copy of the repository as its `origin` with the origin's origin said to be 'upstream'.
 
 If you cloned the original repository, and you want to keep the clone but
 change it to use your copy:
@@ -92,7 +91,7 @@ change it to use your copy:
 git remote -v
 ```
 
-4. Change the origin to your personal upstream repository:
+4. Change the origin to your upstream repository:
 
 ```bash
 git remote set-url origin https://github.com/YOUR_USERNAME/civ-ipriot-smiley.git
@@ -119,17 +118,17 @@ You may want to merge the changes back to your `main` branch.
 
 ### Stretch goals
 
-The following are some activities that go beyond the project's basic requirements to teach us more modern software development principles. These activities should only be attempted **after** you have met the project requirements, and they will **not** be assessed.
+The following activities go beyond the project's basic requirements to teach us more modern software development principles. These activities should only be tried **after** you have met the project requirements, and they will not be assessed.
 
 #### Favor composition over inheritance ('is a' versus 'has a')
 
-While inheritance was one of the darlings of OOP, in modern software development, it is recognised that inheritance can introduce implicit dependencies (coupling) between various parts of the code. This is captured by the famous adage:
+While inheritance was one of the darlings of OOP, in modern software development, it is recognised that inheritance can introduce implicit dependencies (coupling) between various parts of the code. The famous adage captures this:
 
 > Favour composition over inheritance
 
 Raf's corollary to the above statement is:
 
-> If there's some way to state a relationship in terms of `has a`, then use a `has a` relationship.
+> If there's some way to state a relationship in terms of `has a`, then that's probably the right way
 
 We know what inheritance looks like:
 
@@ -161,6 +160,7 @@ Remember, in Python, everything is an object!
 So a dog **has a** `name` string and a dog **has a** `breed` string. Thus, a dog is **composed** of two strings: name and breed!
 
 It is the same for any other object, including our own: when we create an instance of a class in another instance of the class, we are now composing one object from another.
+
 
 ##### Exercise
 
