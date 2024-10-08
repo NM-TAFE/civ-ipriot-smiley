@@ -43,7 +43,7 @@ h4::before {
 
 # Evidence and Knowledge
 
-This document includes instructions and knowledge questions that must be completed to receive a Competent grading on this portfolio task.
+This document includes instructions and knowledge questions that must be completed to receive a *Competent* grade on this portfolio task.
 
 ## Required evidence
 
@@ -51,12 +51,12 @@ This document includes instructions and knowledge questions that must be complet
 
 - Each answer should be complete, well-articulated, and within the specified word count limits (if added) for each question.
 - Please make sure **all** external sources are properly cited.
-- You must **use your own words**. You'll need to include your full chat transcripts if you use generative AI in any capacity.
+- You must **use your own words**. Please include your full chat transcripts if you use generative AI in any way.
 - Generative AI hallucinates, is not an authoritative source
 
 ### Make all the required modifications to the code
 
-- Please follow the instructions in this document to make the necessary changes to the code.
+- Please follow the instructions in this document to make the changes needed to the code.
 
 - When requested to upload evidence, upload all screenshots to `screenshots/` and embed them in this document. For example:
 
@@ -67,9 +67,10 @@ This document includes instructions and knowledge questions that must be complet
 - You must upload the code into your GitHub repository.
 - While you can use a branch, your code should be in main when you submit.
 - Upload a zip of this repository to Blackboard when you are ready to submit.
-- Feedback will be provided via GitHub, but you will be notified of your result via Blackboard
+- You will be notified of your result via Blackboard
+- However, if using GitHub classrooms, you may also receive additional feedback on GitHub directly
 
-### Optional:Use of Raspberry Pi and SenseHat
+### Optional: Use of Raspberry Pi and SenseHat
 
 Raspberry Pi or SenseHat is **optional** for this activity. You can use the included `sense_hat.py` file to simulate the SenseHat on your computer.
 
@@ -87,7 +88,7 @@ Address the following tasks and questions based on the code provided in this rep
 
 ### Set up the project locally
 
-1. Fork this repository (if not using GitHub classrooms)
+1. Fork this repository (if not using GitHub Classrooms)
 2. Clone your repository locally
 3. Run the project locally by executing the `main.py` file
 4. Evidence this by providing screenshots of the project directory structure and the output of the `main.py` file
@@ -105,7 +106,7 @@ python3 main.py
 
  and answer each of the following questions **as they relate to that code**:
 
-1. Examine the code for the `smiley.py` file, and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
+1. Examine the code for the `smiley.py` file and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
 
    | Type                    | name       | value          |
    | ----------              | ---------- | -------------- |
@@ -113,7 +114,7 @@ python3 main.py
    | built-in composite type | _          |  _             |
    | user-defined type       | _          |  _             |
 
-2. Fill in (`_`) the following table, based on the code in `smiley.py`:
+2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
    | Object                   | Type                    |
    | ------------             | ----------------------- |
@@ -129,7 +130,7 @@ python3 main.py
    |  selection   | _          | _           | _           |
    |  iteration   | _          | _           | _           |
 
-4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (you can use an example from the code, if used, otherwise provide an example of your own):
+4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (you can use an example from the code if used, otherwise provide an example of your own):
 
    | Type                    | Used? | Example |
    | ----------------------- | ----- | --------|
@@ -143,7 +144,7 @@ python3 main.py
 > Your answer here
 >
 
-6. Examine `happy.py`, identify the constructor (initializer) for the `Happy` class:
+6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
    
    > Your answer here
@@ -156,17 +157,17 @@ python3 main.py
 
 ### Code style 
 
-1. What code style is used in the code? Is it likely to be the same as the code used in the SenseHat? Provide at least two reasons why/why not.
+1. What code style is used in the code? Is it likely to be the same as the code used in the SenseHat? Could you provide at least two reasons why/why not?
 
 > Your answer here
 >
 
-2. List three aspects of this convention that you see applied in the code?
+2. List three aspects of this convention you see applied in the code.
 
 > Your answer here
 >
 
-3. What is the nearest *documentation* style used in the docstrings of the code?
+3. What is the nearest *documentation* style used in the code's docstrings?
 
 > Your answer here
 > 
@@ -226,11 +227,11 @@ Compare and contrast the classes Happy and Sad.
 
 ### Sad Smileys Can’t Blink (Or Can They?)
 
-Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does not possess the ability to blink. Let's first explore how blinking has been implemented in the Happy smiley by examining the blink() method, which takes one argument that determines the duration of the blink.
+Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does not possess the ability to blink. Let's first explore how blinking has been implemented in the Happy Smiley by examining the blink() method, which takes one argument that determines the duration of the blink.
 
 **Understanding Blink Mechanism:**
 
-1. Does the author of the code believe that every `Smiley` should be able to blink? Explain.
+1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
 > Your answer here
 
@@ -242,7 +243,7 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 > Your answer here
 
-4. How is inheritance used in the blink method and why is it important for polymorphism?
+4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
 > Your answer here
 
@@ -255,11 +256,11 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
        pass  # Replace 'pass' with your implementation
    ```
 
-2. **Code Implementation:** Implement the code that allows the Sad smiley to blink. Use the implementation from the Happy smiley as a reference. Ensure your new method functions similarly by controlling the blink duration through the `delay` argument.
+2. **Code Implementation:** Implement the code that allows the Sad smiley to blink. Use the implementation from the Happy Smiley as a reference. Ensure your new method functions similarly by controlling the blink duration through the `delay` argument.
 
 3. **Testing the Implementation:**
 
-- Test the new blink functionality on your Raspberry Pi or within the Python classes provided. You might need to adjust the `main.py` script to incorporate the Sad Smiley's new blinking capability.
+- Test the new blink functionality on your Raspberry Pi or within the Python classes provided. You might need to adjust the `main.py` script to incorporate Sad Smiley's new blinking capability.
 
 Include a screenshot of the sad smiley or the modified `main.py`:
 
@@ -271,7 +272,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   ### If It Walks Like a Duck…
 
-  Previously, you implemented the blink functionality for the Sad smiley without utilizing the class `Blinkable`. Assuming you did not use `Blinkable` (even if you actually did), consider how the Sad smiley could blink in a similar manner to the Happy smiley without this specific class.
+  Previously, you implemented the blink functionality for the Sad smiley without utilizing the class `Blinkable`. Assuming you did not use `Blinkable` (even if you actually did), consider how the Sad smiley could blink similarly to the Happy smiley without this specific class.
 
   1. **Class Type Analysis:** What kind of class is `Blinkable`? Inspect its superclass for clues about its classification.
 
@@ -281,11 +282,11 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   > Your answer here
 
-  3. **OO Principle Identification:** Referring to your answer in question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
+  3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
   > Your answer here
 
-  4. **Implementation Flexibility:** Explain why you were able to grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
+  4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
   > Your answer here
 
