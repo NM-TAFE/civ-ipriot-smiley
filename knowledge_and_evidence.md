@@ -1,6 +1,49 @@
+<style>
+
+body {
+    counter-reset: h2counter;
+}
+
+/* H1 - No numbering */
+h1 {
+    /* No counter reset or increment */
+}
+
+/* H2 - Level 1 numbering */
+h2 {
+    counter-reset: h3counter;
+}
+
+h2::before {
+    counter-increment: h2counter;
+    content: counter(h2counter) ". ";
+}
+
+/* H3 - Level 2 numbering */
+h3 {
+    counter-reset: h4counter;
+}
+
+h3::before {
+    counter-increment: h3counter;
+    content: counter(h2counter) "." counter(h3counter) " ";
+}
+
+/* H4 - Level 3 numbering (optional) */
+h4 {
+    counter-reset: h5counter;
+}
+
+h4::before {
+    counter-increment: h4counter;
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) " ";
+}
+
+</style>
+
 # Evidence and Knowledge
 
-This document includes instructions and knowledge questions that must be completed to receive a Competent grading on this portfolio task. 
+This document includes instructions and knowledge questions that must be completed to receive a Competent grading on this portfolio task.
 
 ## Required evidence
 
@@ -26,7 +69,7 @@ This document includes instructions and knowledge questions that must be complet
 - Upload a zip of this repository to Blackboard when you are ready to submit.
 - Feedback will be provided via GitHub, but you will be notified of your result via Blackboard
 
-### Use of Raspberry Pi and SenseHat
+### Optional:Use of Raspberry Pi and SenseHat
 
 Raspberry Pi or SenseHat is **optional** for this activity. You can use the included `sense_hat.py` file to simulate the SenseHat on your computer.
 
@@ -49,7 +92,7 @@ Address the following tasks and questions based on the code provided in this rep
 3. Run the project locally by executing the `main.py` file
 4. Evidence this by providing screenshots of the project directory structure and the output of the `main.py` file
 
-![Local Execution](screenshots/CREATE_A_SCREENSHOT_OF_YOUR_local_setup.png)
+![Local Execution (INSERT YOUR SCREENSHOT)](screenshots/CREATE_A_SCREENSHOT_OF_YOUR_local_setup.png)
 
 If you are running on a Raspberry Pi, you can use the following command to run the project and then screenshot the result:
 
@@ -57,6 +100,77 @@ If you are running on a Raspberry Pi, you can use the following command to run t
 ls
 python3 main.py
 ```
+
+### Fundamental code comprehension
+
+ and answer each of the following questions **as they relate to that code**:
+
+1. Examine the code for the `smiley.py` file, and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
+
+   | Type                    | name       | value          |
+   | ----------              | ---------- | -------------- |
+   | built-in primitive type | _          |  _             |
+   | built-in composite type | _          |  _             |
+   | user-defined type       | _          |  _             |
+
+2. Fill in (`_`) the following table, based on the code in `smiley.py`:
+
+   | Object                   | Type                    |
+   | ------------             | ----------------------- |
+   | self.pixels              | _                       |
+   | A member of self.pixels  | _                       |
+   | self                     | _                       |
+
+3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
+
+   | Control Flow | File       | First line  | Line range  |
+   | ------------ | ---------- | ----------- | ----------- |
+   |  sequence    |  _         | _           | _           |
+   |  selection   | _          | _           | _           |
+   |  iteration   | _          | _           | _           |
+
+4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (you can use an example from the code, if used, otherwise provide an example of your own):
+
+   | Type                    | Used? | Example |
+   | ----------------------- | ----- | --------|
+   | int                     |       |          |
+   | float                   |       |          |
+   | str                     |       |          |
+   | bool                    |       |          |
+
+5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
+
+> Your answer here
+>
+
+6. Examine `happy.py`, identify the constructor (initializer) for the `Happy` class:
+   1. What is the purpose of a constructor (in general) and this one (in particular)?
+   
+   > Your answer here
+   >
+   
+   2. What statement(s) does it execute (consider the `super` call), and what is the result?
+
+   > Your answer here
+   >
+
+### Code style 
+
+1. What code style is used in the code? Is it likely to be the same as the code used in the SenseHat? Provide at least two reasons why/why not.
+
+> Your answer here
+>
+
+2. List three aspects of this convention that you see applied in the code?
+
+> Your answer here
+>
+
+3. What is the nearest *documentation* style used in the docstrings of the code?
+
+> Your answer here
+> 
+
 
 ### Identifying and understanding classes
 
@@ -69,20 +183,17 @@ python3 main.py
 | Class Name | Super or Sub? | Direct parent(s) |
 | ---------- | ------------- | ---------------- |
 | NotReal    | Sub           | NotRealParent    |
-|            |               |                  |
-|            |               |                  |
-
-...
+|   ...      |   ...         |      ...         |
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
 > Your answer here
-> 
+>
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
 > Your answer here
-> 
+>
 
 ### Compare and contrast classes
 
@@ -90,38 +201,52 @@ Compare and contrast the classes Happy and Sad.
 
 1. What is a key difference between the two classes?
    > Your answer here
-   > 
+   >
 2. What are the key similarities?
    > Your answer here
-   > 
+   >
 3. What difference stands out the most to you and why?
    > Your answer here
-   > 
+   >
 4. How does this difference affect the functionality of these classes
    > Your answer here
-   > 
+   >
 
 ### Where is the Sense(Hat) in the code?
 
 1. Which class(s) utilize the functionality of the SenseHat?
    > Your answer here
-   > 
+   >
 2. Which of these classes directly interact with the SenseHat functionalities?
    > Your answer here
-   > 
+   >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
    > Your answer here
-   > 
+   >
 
 ### Sad Smileys Can’t Blink (Or Can They?)
 
 Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does not possess the ability to blink. Let's first explore how blinking has been implemented in the Happy smiley by examining the blink() method, which takes one argument that determines the duration of the blink.
 
-1. **Understanding Blink Mechanism:** In your own words, explain how the `blink()` method enables the Happy smiley to blink. What role does the argument play in this method?
+**Understanding Blink Mechanism:**
+
+1. Does the author of the code believe that every `Smiley` should be able to blink? Explain.
 
 > Your answer here
 
-2. **Implement Blink in Sad Class:**
+2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
+
+> Your answer here
+
+3. Explain what polymorphism is using the blink method as an example.
+
+> Your answer here
+
+4. How is inheritance used in the blink method and why is it important for polymorphism?
+
+> Your answer here
+
+1. **Implement Blink in Sad Class:**
 
    - Create a new method called `blink` within the Sad class. Ensure you use the same method signature as in the Happy class:
 
@@ -130,9 +255,9 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
        pass  # Replace 'pass' with your implementation
    ```
 
-3. **Code Implementation:** Implement the code that allows the Sad smiley to blink. Use the implementation from the Happy smiley as a reference. Ensure your new method functions similarly by controlling the blink duration through the `delay` argument.
+2. **Code Implementation:** Implement the code that allows the Sad smiley to blink. Use the implementation from the Happy smiley as a reference. Ensure your new method functions similarly by controlling the blink duration through the `delay` argument.
 
-4. **Testing the Implementation:**
+3. **Testing the Implementation:**
 
 - Test the new blink functionality on your Raspberry Pi or within the Python classes provided. You might need to adjust the `main.py` script to incorporate the Sad Smiley's new blinking capability.
 
