@@ -53,9 +53,10 @@ git switch -c por2
 python -m venv .venv
 ```
 
-8. Open the project in PyCharm, the root folder should be `civ-ipriot-smiley`
+8. Open the project in PyCharm; the root folder should be `civ-ipriot-smiley`
 
-9. Modify the code based on the assessment requirements
+9. Modify the code based on the [assessment requirements](knowledge_and_evidence.md)
+    
 10. Stage the modifications you made:
 
 ```bash
