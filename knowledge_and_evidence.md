@@ -134,10 +134,10 @@ python3 main.py
 
    | Type                    | Used? | Example |
    | ----------------------- | ----- | --------|
-   | int                     |       |          |
-   | float                   |       |          |
-   | str                     |       |          |
-   | bool                    |       |          |
+   | int                     | _     | _          |
+   | float                   | _     | _          |
+   | str                     | _     | _          |
+   | bool                    | _     | _          |
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
@@ -146,16 +146,16 @@ python3 main.py
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
-   
+
    > Your answer here
    >
-   
+
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
    > Your answer here
    >
 
-### Code style 
+### Code style
 
 1. What code style is used in the code? Is it likely to be the same as the code used in the SenseHat? Could you provide at least two reasons why/why not?
 
@@ -167,11 +167,10 @@ python3 main.py
 > Your answer here
 >
 
-3. What is the nearest *documentation* style used in the code's docstrings?
+3. Give two examples of organizational documentation that you see in the code.
 
 > Your answer here
-> 
-
+>
 
 ### Identifying and understanding classes
 
@@ -215,7 +214,7 @@ Compare and contrast the classes Happy and Sad.
 
 ### Where is the Sense(Hat) in the code?
 
-1. Which class(s) utilize the functionality of the SenseHat?
+1. Which class(es) utilize the functionality of the SenseHat?
    > Your answer here
    >
 2. Which of these classes directly interact with the SenseHat functionalities?
@@ -234,19 +233,22 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
 > Your answer here
+>
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
 > Your answer here
+>
 
-3. Explain what polymorphism is using the blink method as an example.
+3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
 > Your answer here
+>
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
 > Your answer here
-
+>
 1. **Implement Blink in Sad Class:**
 
    - Create a new method called `blink` within the Sad class. Ensure you use the same method signature as in the Happy class:
