@@ -1,22 +1,26 @@
 # Smiley: Intro to OOP and IoT
-> :warning: If you are using the GitHub Classroom version of this assessment, you must address the requirements in `knowledge_and_evidence.md`. Otherwise, please use the workbook supplied on Blackboard.
+> :warning: This assessment may be distributed in one of the following forms:
+> - **GitHub Classrooms**: You will automatically receive a  copy of this repo on NMTAFE's org (if you don't know what GitHub Classrooms is, then your group is not using it 😉)
+> - **Blackboard**: There will be an assessment handout that may refer to parts or all of this repo
+> 
+> Both versions are otherwise identical and require answering the same questions and performing the same tasks.  
 
-Demonstrates key Python OOP concepts and provides the first project's starting code.
+This assessment demonstrates your understanding of processes and techniques related to object-oriented programming, including the concepts and language. The assessment consists of a knowledge-based and practical component.
 
-The project presents various smiley faces that appear on the SenseHAT LED matrix.
+You begin with some starter code: A set of smiley faces that can be presented on a SenseHAT LED matrix (optional)
 
-The project helps students explore the core pillars of OOP. Specifically:
+The project will help you demonstrate and cement your understanding of the four pillars of object-oriented programming:
 
 1. **Abstraction**: expose objects in terms of how they are used, not how they are implemented
 2. **Polymorphism**: handle different forms in the same way
 3. **Inheritance**: by subclassing a common Smiley class
 4. **Encapsulation**: protect the internal state of objects
 
-Students are encouraged to play around with the files to get a feel for what's going on.
 
 ## Working on this project
 
-You **must** work against your forked version of this repository:
+If using GitHub Classrooms, use the repository uniquely allocated to you. 
+Otherwise,you **must** work against your forked version of this repository:
 
 1. From the top-right corner, select **Fork** and follow the prompts.
 2. Open the terminal (Command Prompt or Git Bash on Windows) and navigate to the desired parent folder for this project.
@@ -43,8 +47,17 @@ cd civ-ipriot-smiley
 git switch -c por2
 ```
 
-7. Modify the code based on the assessment requirements
-8. Stage the modifications you made:
+7. Create a `venv` for your project:
+
+```bash
+python -m venv .venv
+```
+
+8. Open the project in PyCharm; the root folder should be `civ-ipriot-smiley`
+
+9. Modify the code based on the [assessment requirements](knowledge_and_evidence.md)
+    
+10. Stage the modifications you made:
 
 ```bash
 
@@ -62,22 +75,21 @@ git commit -m "Addressed requirements of the porfolio"
 
 ```bash
 
-git push origin at2-part1
+git push -u origin at2-part1
 ```
 
 ### Oh fork: what to do if you didn't fork
 
 > Also, what is a fork anyway?
 
-A fork creates a personal copy of a repository on your own github account.
+A fork creates a personal copy of a repository on your own GitHub account.
 What makes the fork a fork (rather than a plain old copy) is that the fork
 still refers to the repository from whence it came as its `upstream`.
 
-This allows you to still pull from the upstream or push from it.
+This still allows you to pull or push from the upstream.
 
-At a technical level, a clone of a forked repository has your
-copy of the repository as its `origin` and a reference to the forked
-repository as `upstream`.
+At a conceptual level, a clone of a forked repository has your
+copy of the repository as its `origin` with the origin's origin said to be 'upstream'.
 
 If you cloned the original repository, and you want to keep the clone but
 change it to use your copy:
@@ -92,7 +104,7 @@ change it to use your copy:
 git remote -v
 ```
 
-4. Change the origin to your personal upstream repository:
+4. Change the origin to your upstream repository:
 
 ```bash
 git remote set-url origin https://github.com/YOUR_USERNAME/civ-ipriot-smiley.git
@@ -119,17 +131,17 @@ You may want to merge the changes back to your `main` branch.
 
 ### Stretch goals
 
-The following are some activities that go beyond the project's basic requirements to teach us more modern software development principles. These activities should only be attempted **after** you have met the project requirements, and they will **not** be assessed.
+The following activities go beyond the project's basic requirements to teach us more modern software development principles. These activities should only be tried **after** you have met the project requirements, and they will not be assessed.
 
 #### Favor composition over inheritance ('is a' versus 'has a')
 
-While inheritance was one of the darlings of OOP, in modern software development, it is recognised that inheritance can introduce implicit dependencies (coupling) between various parts of the code. This is captured by the famous adage:
+While inheritance was one of the darlings of OOP, in modern software development, it is recognised that inheritance can introduce implicit dependencies (coupling) between various parts of the code. The famous adage captures this:
 
 > Favour composition over inheritance
 
 Raf's corollary to the above statement is:
 
-> If there's some way to state a relationship in terms of `has a`, then use a `has a` relationship.
+> If there's some way to state a relationship in terms of `has a`, then that's probably the right way
 
 We know what inheritance looks like:
 
@@ -143,7 +155,7 @@ Child(Parent):
 
 But what does composition look like in Python?
 
-Well, here's the crazy thing, you've already been doing composition, you just didn't know it. Let's go back to the very very first OOP example we did:
+Well, here's the crazy thing: you've already been doing composition; you just didn't know it. Let's go back to the very very first OOP example we did:
 
 ```python
 class Dog:
@@ -161,6 +173,7 @@ Remember, in Python, everything is an object!
 So a dog **has a** `name` string and a dog **has a** `breed` string. Thus, a dog is **composed** of two strings: name and breed!
 
 It is the same for any other object, including our own: when we create an instance of a class in another instance of the class, we are now composing one object from another.
+
 
 ##### Exercise
 
