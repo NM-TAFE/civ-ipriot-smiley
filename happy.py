@@ -5,12 +5,7 @@ from smiley import Smiley
 
 class Happy(Smiley, Blinkable):
     """
-    Happy is a subclass of Smiley and of Blinkable.
-
-    Note that Blinkable is an interface (an abstract base
-    class that only contains an abstract method). By subclassing
-    Blinkable, this class promises to implement the abstract
-    method.See {meth:blink} below.
+   Provides a Smiley with a happy expression
     """
     def __init__(self):
         super().__init__()
@@ -20,7 +15,7 @@ class Happy(Smiley, Blinkable):
 
     def draw_mouth(self):
         """
-        Method that draws the mouth on the standard faceless smiley.
+       Renders a mouth by blanking the pixels that form that object.
         """
         mouth = [41, 46, 50, 51, 52, 53]
         for pixel in mouth:
@@ -28,8 +23,8 @@ class Happy(Smiley, Blinkable):
 
     def draw_eyes(self, wide_open=True):
         """
-        Method that draws the eyes (open or closed) on the standard smiley.
-        :param wide_open: True if eyes opened, False otherwise
+       Draws the eyes (open or closed) on the standard smiley.
+        :param wide_open (bool): eyes open or closed.
         """
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
@@ -37,11 +32,9 @@ class Happy(Smiley, Blinkable):
 
     def blink(self, delay=0.25):
         """
-        Make the happy smiley blink once with a certain delay (in s).
-        This is the implementation of the abstract method from the
-        Blinkable abstract class.
-
-        :param delay: Delay in seconds
+       Blinks the smiley's eyes once
+        
+        :param delay: Delay between blinks (in seconds)
         """
         self.draw_eyes(wide_open=False)
         self.show()
