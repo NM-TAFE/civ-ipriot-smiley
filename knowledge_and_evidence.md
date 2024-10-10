@@ -157,8 +157,8 @@ python3 main.py
 
 ### Code style
 
-1. What code style is used in the code? Is it likely to be the same as the code used in the SenseHat? Could you provide at least two reasons why/why not?
-
+1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
+   
 > Your answer here
 >
 
@@ -199,7 +199,7 @@ python3 main.py
 
 Compare and contrast the classes Happy and Sad.
 
-1. What is a key difference between the two classes?
+1. What is the key difference between the two classes?
    > Your answer here
    >
 2. What are the key similarities?
@@ -347,7 +347,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   3. **Rationale for `my_complexion`:** Using a distinct instance variable like `my_complexion` avoids potential conflicts with the method parameter names and clarifies that it is an attribute specific to the object.
 
-  4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactor tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
+  4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
   ![Bulk Rename](screenshots/bulk_rename.png)
 
