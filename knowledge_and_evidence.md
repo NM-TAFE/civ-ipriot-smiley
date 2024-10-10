@@ -104,7 +104,7 @@ python3 main.py
 
 ### Fundamental code comprehension
 
- and answer each of the following questions **as they relate to that code**:
+ Answer each of the following questions **as they relate to that code** supplied by in this repository (ignore `sense_hat.py`):
 
 1. Examine the code for the `smiley.py` file and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
 
@@ -130,7 +130,7 @@ python3 main.py
    |  selection   | _          | _           | _           |
    |  iteration   | _          | _           | _           |
 
-4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (you can use an example from the code if used, otherwise provide an example of your own):
+4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
    | Type                    | Used? | Example |
    | ----------------------- | ----- | --------|
@@ -167,7 +167,7 @@ python3 main.py
 > Your answer here
 >
 
-3. Give two examples of organizational documentation that you see in the code.
+3. Give two examples of organizational documentation in the code.
 
 > Your answer here
 >
