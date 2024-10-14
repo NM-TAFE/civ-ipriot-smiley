@@ -64,7 +64,7 @@ this portfolio task.
   example:
 
 ```markdown
-![Example Evidence of: Running Code](screenshots/screenshot1.png)
+![Example Running Code](screenshots/screenshot1.png)
 ```
 
 - You must upload the code into your GitHub repository.
