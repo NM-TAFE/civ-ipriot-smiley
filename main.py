@@ -5,15 +5,20 @@ That is, delete the sense_hat.py file that is included in this bundle."""
 import time
 
 from happy import Happy
+from sad import Sad
+
 
 def main():
     smiley = Happy()
+    sad = Sad()
 
     smiley.show()
+    sad.show()
 
-    time.sleep(6)
+    time.sleep(1)
 
     smiley.blink()
+
 
 if __name__ == '__main__':
     ############################################################
@@ -22,4 +27,3 @@ if __name__ == '__main__':
     # freeze_support()
     ############################################################
     main()
-

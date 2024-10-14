@@ -11,7 +11,6 @@ import tkinter as tk
 
 DEFAULT_RGB = [(255, 255, 255)] * 64
 
-
 logging.basicConfig(format="%(asctime)s.%(msecs)03d [%(levelname)s] %(name)s (%(filename)s:%(lineno)d): %(message)s",
                     level=logging.INFO,
                     datefmt="%Y-%m-%d %H:%M:%S")
@@ -65,7 +64,7 @@ class SenseHat:
             frame = tk.Frame(self.root, width=30,
                              height=30, bd=1, relief='solid')
             frame.grid(row=i, column=j)
-            self.led_matrix[i*8 + j] = frame  # type: ignore
+            self.led_matrix[i * 8 + j] = frame  # type: ignore
 
     def _set_pixels(self, rgb_values):
         self.logger.debug('Setting mock SenseHAT LED matrix pixel values')

@@ -1,4 +1,8 @@
-from smiley import Smiley
+import contextlib
+
+import pyttsx3
+
+from smiley import Smiley, TTSStream
 
 
 class Sad(Smiley):
@@ -7,9 +11,11 @@ class Sad(Smiley):
     2. Make it so the mood is parameterised in both the parent and child
     3. ensure that the draw mouth correctly encapsulates the mood of the smiley
     """
-    def __init__(self):
-        super().__init__()
 
+    def __init__(self):
+        super().__init__("sad", "🙁")
+        self.engine = pyttsx3.init()
+        self.tts_stream = TTSStream(self.engine)
         self.draw_mouth()
         self.draw_eyes()
 
@@ -17,7 +23,10 @@ class Sad(Smiley):
         """
         Draws the mouth feature on a smiley
         """
-        print(f"Drawing a {self.mood}, face: {self.emoji}")
+        description = f"Drawing a YELLOW {self.mood} face: {self.emoji}"
+
+        with contextlib.redirect_stdout(self.tts_stream), contextlib.redirect_stderr(self.tts_stream):
+            print(description)
 
         mouth = [49, 54, 42, 43, 44, 45]
         for pixel in mouth:
@@ -34,7 +43,9 @@ class Sad(Smiley):
         description = f"{self.mood} eyes open"
         if not wide_open:
             description = f"{self.mood} eyes closed"
-        print(description)
+
+        with contextlib.redirect_stdout(self.tts_stream), contextlib.redirect_stderr(self.tts_stream):
+            print(description)
 
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
