@@ -1,6 +1,9 @@
-from smiley import Smiley, TTSStream
 import contextlib
+
 import pyttsx3
+
+from smiley import Smiley, TTSStream
+
 
 class Sad(Smiley):
     """Challenges (repeated from smiley):
@@ -8,8 +11,9 @@ class Sad(Smiley):
     2. Make it so the mood is parameterised in both the parent and child
     3. ensure that the draw mouth correctly encapsulates the mood of the smiley
     """
+
     def __init__(self):
-        super().__init__("sad","🙁")
+        super().__init__("sad", "🙁")
         self.engine = pyttsx3.init()
         self.tts_stream = TTSStream(self.engine)
         self.draw_mouth()

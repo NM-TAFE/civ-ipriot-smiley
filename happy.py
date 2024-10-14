@@ -1,10 +1,11 @@
+import contextlib
 import time
+
+import pyttsx3
+
 from blinkable import Blinkable
 from smiley import Smiley, TTSStream
 
-import pyttsx3
-import contextlib
-import io
 
 class Happy(Smiley, Blinkable):
     """

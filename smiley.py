@@ -1,7 +1,9 @@
-from sense_hat import SenseHat
-import pyttsx3
-import contextlib
 import io
+
+import pyttsx3
+
+from sense_hat import SenseHat
+
 
 class TTSStream(io.StringIO):
     def __init__(self, engine):
@@ -41,7 +43,7 @@ class Smiley:
     YELLOW = (255, 255, 0)
     BLANK = (0, 0, 0)
 
-    def __init__(self,mood="happy",emoji="😀"):
+    def __init__(self, mood="happy", emoji="😀"):
         # We have encapsulated the SenseHat object
         self.sense_hat = SenseHat()
         self.engine = pyttsx3.init()
