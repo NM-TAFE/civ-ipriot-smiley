@@ -15,7 +15,7 @@ class Sad(Smiley):
 
     def draw_mouth(self):
         """
-        Method that draws the mouth on the standard faceless smiley.
+        Draws the mouth feature on a smiley
         """
         print(f"Drawing a {self.mood}, face: {self.emoji}")
 
@@ -25,12 +25,21 @@ class Sad(Smiley):
 
     def draw_eyes(self, wide_open=True):
         """
-        Method that draws the eyes (open or closed) on the standard smiley.
-        :param wide_open: True if eyes opened, False otherwise
+        Draws open or closed eyes on a smiley
+
+        For accessibility: describes state of smiley eyes to user
+
+        :param wide_open: Render eyes wide open or shut
         """
-        description = f"{self.mood} eyes open" else "happy eyes closed"
+        description = f"{self.mood} eyes open"
+        if not wide_open:
+            description = f"{self.mood} eyes closed"
         print(description)
 
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
-            self.pixels[pixel] = self.BLANK if wide_open else self.YELLOW
+            if wide_open:
+                eyes = self.BLANK
+            else:
+                eyes = self.YELLOW
+            self.pixels[pixel] = eyes

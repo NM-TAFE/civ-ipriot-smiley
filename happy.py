@@ -5,18 +5,11 @@ from smiley import Smiley
 
 class Happy(Smiley, Blinkable):
     """
-    Happy is a subclass of Smiley and of Blinkable.
+    Provides a Smiley with a happy expression.
 
-    Note that Blinkable is an interface (an abstract base
-    class that only contains an abstract method). By subclassing
-    Blinkable, this class promises to implement the abstract
-    method.See {meth:blink} below.
-
-    Challenges:
-    1. Notice that all smileys inherit the mood of their parent!
-    2. Make it so the mood is parameterised in both the parent and child
-    3. ensure that the draw mouth correctly encapsulates the mood of the smiley
+    For accessibility the class prints to the standard output the state of the "happy" smiley.
     """
+
     def __init__(self):
         super().__init__()
 
@@ -25,7 +18,7 @@ class Happy(Smiley, Blinkable):
 
     def draw_mouth(self):
         """
-        Method that draws the mouth on the standard faceless smiley.
+        Renders a mouth by blanking the pixels that form that object.
         """
         print(f"Drawing a {self.mood}, face: {self.emoji}")
         mouth = [41, 46, 50, 51, 52, 53]
@@ -34,26 +27,35 @@ class Happy(Smiley, Blinkable):
 
     def draw_eyes(self, wide_open=True):
         """
-        Method that draws the eyes (open or closed) on the standard smiley.
-        :param wide_open: True if eyes opened, False otherwise
+        Draws the eyes (open or closed) on the standard smiley.
+
+        For accessibility: describes state of smiley eyes to user
+
+        :param wide_open (bool): eyes open or closed.
         """
-        description = f"{self.mood} eyes open" if wide_open else "happy eyes closed"
+        description = f"{self.mood} eyes open"
+        if not wide_open:
+            description = f"{self.mood} eyes closed"
         print(description)
+
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
-            self.pixels[pixel] = self.BLANK if wide_open else self.YELLOW
+            self.pixels[pixel] = self.BLANK
+            if not wide_open:
+                self.pixels[pixel] = self.YELLOW
 
     def blink(self, delay=0.25):
         """
-        Make the happy smiley blink once with a certain delay (in s).
-        This is the implementation of the abstract method from the
-        Blinkable abstract class.
+        Blinks the smiley's eyes once
 
-        :param delay: Delay in seconds
+        For accessibility: describes state of smiley blink to user
+
+        :param delay: Delay between blinks (in seconds)
         """
-        print("Beginning blink")
+        print("Blink Started")
         self.draw_eyes(wide_open=False)
         self.show()
         time.sleep(delay)
         self.draw_eyes(wide_open=True)
         self.show()
+        print("Blink Completed")
