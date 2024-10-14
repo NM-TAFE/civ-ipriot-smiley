@@ -1,7 +1,10 @@
 import time
 from blinkable import Blinkable
-from smiley import Smiley
+from smiley import Smiley, TTSStream
 
+import pyttsx3
+import contextlib
+import io
 
 class Happy(Smiley, Blinkable):
     """
@@ -12,7 +15,8 @@ class Happy(Smiley, Blinkable):
 
     def __init__(self):
         super().__init__()
-
+        self.engine = pyttsx3.init()
+        self.tts_stream = TTSStream(self.engine)
         self.draw_mouth()
         self.draw_eyes()
 
@@ -20,7 +24,11 @@ class Happy(Smiley, Blinkable):
         """
         Renders a mouth by blanking the pixels that form that object.
         """
-        print(f"Drawing a {self.mood}, face: {self.emoji}")
+        description = f"Drawing a YELLOW {self.mood} face: {self.emoji}"
+
+        with contextlib.redirect_stdout(self.tts_stream), contextlib.redirect_stderr(self.tts_stream):
+            print(description)
+
         mouth = [41, 46, 50, 51, 52, 53]
         for pixel in mouth:
             self.pixels[pixel] = self.BLANK
@@ -36,7 +44,9 @@ class Happy(Smiley, Blinkable):
         description = f"{self.mood} eyes open"
         if not wide_open:
             description = f"{self.mood} eyes closed"
-        print(description)
+
+        with contextlib.redirect_stdout(self.tts_stream), contextlib.redirect_stderr(self.tts_stream):
+            print(description)
 
         eyes = [10, 13, 18, 21]
         for pixel in eyes:
@@ -52,10 +62,18 @@ class Happy(Smiley, Blinkable):
 
         :param delay: Delay between blinks (in seconds)
         """
-        print("Blink Started")
+        description = "Blink Started"
+        with contextlib.redirect_stdout(self.tts_stream), contextlib.redirect_stderr(self.tts_stream):
+            print(description)
+
         self.draw_eyes(wide_open=False)
         self.show()
+
         time.sleep(delay)
+
         self.draw_eyes(wide_open=True)
         self.show()
-        print("Blink Completed")
+
+        description = "Blink Completed"
+        with contextlib.redirect_stdout(self.tts_stream), contextlib.redirect_stderr(self.tts_stream):
+            print(description)
