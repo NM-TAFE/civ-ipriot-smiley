@@ -160,6 +160,4 @@ cython_debug/
 #.idea/
 temp_*
 .idea/
-.idea/**
-
-.venv/**
+.idea/

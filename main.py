@@ -11,7 +11,7 @@ def main():
 
     smiley.show()
 
-    time.sleep(6)
+    time.sleep(1)
 
     smiley.blink()
 
