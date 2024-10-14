@@ -99,7 +99,7 @@ Address the following tasks and questions based on the code provided in this rep
 3. Run the project locally by executing the `main.py` file
 4. Evidence this by providing screenshots of the project directory structure and the output of the `main.py` file
 
-![Evidence of Local Execution (INSERT YOUR SCREENSHOT)](screenshots/CREATE_A_SCREENSHOT_OF_YOUR_local_setup.png)
+![Evidence of: Local Execution (INSERT YOUR SCREENSHOT)](screenshots/CREATE_A_SCREENSHOT_OF_YOUR_local_setup.png)
 
 If you are running on a Raspberry Pi, you can use the following command to run the project and then screenshot the
 result:
@@ -161,13 +161,13 @@ Answer each of the following questions **as they relate to that code** supplied 
 
     a. What is the purpose of a constructor (in general) and this one (in particular)?
 
-    > Your answer here
-    >
+> Your answer here
+>
 
     b. What statement(s) does it execute (consider the `super` call), and what is the result?
 
-    > Your answer here
-    >
+> Your answer here
+>
 
 ### Code style
 
@@ -217,35 +217,40 @@ Use the following table for your answers:
 Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
-   > Your answer here
+
+> Your answer here
 >
 
 2. What are the key similarities?
-   > Your answer here
+
+> Your answer here
 >
 
 3. What difference stands out the most to you and why?
-   > Your answer here
+
+> Your answer here
 >
 
 4. How does this difference affect the functionality of these classes
-   > Your answer here
 
+> Your answer here
 >
 
 ### Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
-   > Your answer here
+
+> Your answer here
 >
 
 2. Which of these classes directly interact with the SenseHat functionalities?
-   > Your answer here
+
+> Your answer here
 >
 
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > Your answer here
 
+> Your answer here
 >
 
 ### Sad Smileys Can’t Blink (Or Can They?)
@@ -306,6 +311,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
     - Describe any adjustments or issues encountered during implementation.
 
 > Your answer here
+> 
 
 ### If It Walks Like a Duck…
 
@@ -336,12 +342,14 @@ the Happy smiley without this specific class.
    - Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
 > Your answer here
+> 
 
 4. **Implementation Flexibility:** 
 
     - Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
 > Your answer here
+> 
 
 5. **Concept and Language Specificity:** 
 
@@ -350,6 +358,7 @@ the Happy smiley without this specific class.
     - **Clue** This concept is hinted at in the title of this section.
 
 > Your answer here
+> 
 
 
 ## Refactoring
@@ -376,12 +385,14 @@ We'll explore the feasibility of integrating these colors into our smileys.
 
     c. Add the color blue to the appropriate class using the appropriate format and values.
 
+
 2. **Usage of Color Variables:**
 
     a. In which classes are the color variables used?
 
     > Your answer here
     > 
+
 
 3. **Simple Method to Change Colors:**
 
@@ -408,22 +419,25 @@ Let's start by removing the built-in assumptions about color in our classes.
 
 1. **Add a method called `complexion` to the `Smiley` class:** 
 
-    - Implement this instance method to return `self.YELLOW`. Using the term "complexion" instead of "color" provides a
-      more abstract terminology that focuses on the meaning rather than implementation.
+   - Implement this instance method to return `self.YELLOW`.
+   - Using the term "complexion" instead of "color" provides a more abstract terminology that focuses on the meaning
+     rather than implementation.
 
 2. **Refactor subclasses to use the `complexion` method:** 
 
-    - Modify any subclass that directly accesses the color variable to instead utilize the new `complexion` method. 
-    - This ensures that color handling is centralized and can be easily modified in the future.
+   - Modify any subclass that directly accesses the color variable to instead utilize the new `complexion` method.
+   - This ensures that color handling is centralized and can be easily modified in the future.
 
 3. **Determine the applicable Object-Oriented principle:** 
 
-   - Consider whether Abstraction, Polymorphism, Inheritance, or Encapsulation best applies to the modifications made in this step.
+   - Consider whether Abstraction, Polymorphism, Inheritance, or Encapsulation best applies to the modifications made in
+     this step.
 
 4. **Verify the implementation:** 
 
-    - Ensure that the modifications function as expected. 
-    - The smileys should still display in yellow, confirming that the new method correctly replaces the direct color references.
+   - Ensure that the modifications function as expected.
+   - The smileys should still display in yellow, confirming that the new method correctly replaces the direct color
+     references.
 
 This step is crucial for setting up a more flexible system for color management in the smiley display logic, allowing
 for easy adjustments and extensions in the future.
@@ -452,9 +466,9 @@ effectively.
 4. **Bulk rename:**
 
    - We want to update our grid to use the value of complexion, but we have so many `Y`'s in the
-      grid. 
+     grid.
    - Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`, where `X` is the
-      value of the `complexion` variable. 
+     value of the `complexion` variable.
    - Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
 ![Evidence of: Bulk Rename](screenshots/bulk_rename.png)
