@@ -3,6 +3,11 @@ import contextlib
 import pyttsx3
 
 class Sad(Smiley):
+    """Challenges (repeated from smiley):
+    1. Notice that all smileys inherit the mood of their parent!
+    2. Make it so the mood is parameterised in both the parent and child
+    3. ensure that the draw mouth correctly encapsulates the mood of the smiley
+    """
     def __init__(self):
         super().__init__("sad","🙁")
         self.engine = pyttsx3.init()
