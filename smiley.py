@@ -44,6 +44,8 @@ class Smiley:
             Y, Y, Y, Y, Y, Y, Y, Y,
             O, Y, Y, Y, Y, Y, Y, O,
         ]
+        self.mood = "Happy"
+        self.emoji = "😀"
 
     def dim_display(self, dimmed=True):
         """
