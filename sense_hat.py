@@ -83,7 +83,6 @@ class SenseHat:
 
     def set_pixels(self, rgb_values):
         """Emulates the SenseHAT.set_pixels method"""
-        print("Setting the pixel values in the display")
         self.logger.debug("set_pixels called")
         self.queue.put(('set_pixels', rgb_values))
 
@@ -94,7 +93,6 @@ class SenseHat:
 
     @low_light.setter
     def low_light(self, value):
-        print(f"setting low light mode to {value = }")
         self.queue.put(('low_light', value))
 
     def close(self):
