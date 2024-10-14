@@ -2,6 +2,26 @@ from sense_hat import SenseHat
 
 
 class Smiley:
+    """
+
+    For accessibility the class prints to the standard output the state of the smiley.
+
+    ---
+    Smiley Colours:
+    - Defined by using Red, Green & Blue values.
+    - Each may have values from 0 to 255.
+    - 0 is OFF, 255 is fully on
+
+    Other colour examples:
+    - CYAN = 0 255 255
+    - MAGENTA = 255 0 255
+    - AMBER = 255 191 0
+
+    References:
+        - https://www.rapidtables.com/web/color/RGB_Color.html
+        - https://rgbcolorcode.com
+        - https://html-color.codes
+    """
     WHITE = (255, 255, 255)
     GREEN = (0, 255, 0)
     RED = (255, 0, 0)
