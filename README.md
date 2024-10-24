@@ -56,7 +56,9 @@ python -m venv .venv
 8. Open the project in PyCharm; the root folder should be `civ-ipriot-smiley`
 
 9. Modify the code based on the [assessment requirements](knowledge_and_evidence.md)
-    
+
+---
+**Recommended:**    
 10. Stage the modifications you made:
 
 ```bash
@@ -68,16 +70,21 @@ git add .
 
 ```bash
 
-git commit -m "Addressed requirements of the porfolio"
+git commit -m "Complete portfolio activity"
 ```
 
 10. Push the changes:
 
 ```bash
 
-git push -u origin at2-part1
+git push -u origin por1
 ```
 
+**End of recommended section**
+
+11. Submit your work as per the assessment instructions on Blackboard. You can use GitHub to create a `zip` of your project if you followed the recommended steps previously.
+
+------
 ### Oh fork: what to do if you didn't fork
 
 > Also, what is a fork anyway?
@@ -127,7 +134,7 @@ git fetch upstream
 
 ### After you have submitted
 
-You may want to merge the changes back to your `main` branch.
+You may want to merge the changes back to your `main` branch using a pull request.
 
 ### Stretch goals
 
