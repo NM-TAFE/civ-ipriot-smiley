@@ -225,25 +225,32 @@ Compare and contrast the classes Happy and Sad.
    > animation of blinking. Which is something that sad doesn't have.
    >
 2. What are the key similarities?
-   > Your answer here
+   > Happy and Sad both use arrays to save values within the methods
    >
 3. What difference stands out the most to you and why?
-   > Your answer here
+   > The usage of delay and Time in happy stands out the most for me because I haven't seen 
+   > such usage for libraries before.
    >
 4. How does this difference affect the functionality of these classes
-   > Your answer here
+   > The functionality of happy offers much more than sad within the application, the 
+   > blinking of the emoji gives the happy class much more personality and makes the user 
+   > feel more certain about the effort put into the application
    >
 
 ### Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
-   > Your answer here
+   > Smiley, Happy and Sad utilize SenseHat's functionality.
    >
 2. Which of these classes directly interact with the SenseHat functionalities?
-   > Your answer here
+   > Only smiley interacts directly with the functionalities of SenseHat
    >
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > Your answer here
+   > The encapsulation of SenseHat was done through the use of Smiley within the program, 
+   > there was a single instance of usage of SenseHat, and it was done in Smiley. Within 
+   > Smiley, the SenseHat was initialized. From then and onwards, other classes referenced and 
+   > used Smiley not SenseHat. With this, everyone only needs to refer to the smiley 
+   > class to understand what's happening within sad and happy.
    >
 
 ### Sad Smileys Can’t Blink (Or Can They?)
