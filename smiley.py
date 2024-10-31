@@ -12,8 +12,9 @@ class Smiley:
     def __init__(self):
         # We have encapsulated the SenseHat object
         self.sense_hat = SenseHat()
+        my_complexion = complexion()
 
-        Y = self.YELLOW
+        Y = Smiley.complexion(self)
         O = self.BLANK
         self.pixels = [
             O, Y, Y, Y, Y, Y, Y, O,
@@ -38,3 +39,9 @@ class Smiley:
         Show the smiley on the screen.
         """
         self.sense_hat.set_pixels(self.pixels)
+
+    def complexion(self):
+        """
+        Sets smileys color
+        """
+        return self.YELLOW

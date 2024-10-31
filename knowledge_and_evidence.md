@@ -306,19 +306,19 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   2. **Class Implementation:** `Blinkable` is a class intended to be implemented by other classes. What generic term describes this kind of class, which is designed for implementation by others? **Clue**: Notice the lack of any concrete implementation and the naming convention.
 
-  > Your answer here
+  > Blinkable is an abstract class which is designed for implementation by others
 
   3. **OO Principle Identification:** Regarding your answer to question (2), which Object-Oriented (OO) principle does this represent? Choose from the following and justify your answer in 1-2 sentences: Abstraction, Polymorphism, Inheritance, Encapsulation.
 
-  > Your answer here
+  > Blinkable represents polymorphism, as it allows multiple different classes to use a blink function, but in a different way. because blinkable only allows blink, it is not inheritance.
 
   4. **Implementation Flexibility:** Explain why you could grant the Sad Smiley a blinking feature similar to the Happy Smiley's implementation, even without directly using `Blinkable`.
 
-  > Your answer here
+  > You could implement blink into sad smiley without using Blinkable because it is a one way relationship. Blinkable specifies what function a class that is "Blinkable" should be able to do, however you could still implement code to a class that isn't "Blinkable" with a similar blink function
 
   5. **Concept and Language Specificity:** In relation to your response to question (4), what is this capability known as, and why is it feasible in Python and many other dynamically typed languages but not in most statically typed programming languages like C#? **Clue** This concept is hinted at in the title of this section.
 
-  > Your answer here
+  > This capability is referred to as "Duck typing". Using duck typing, the types are not checked at all, instead checking if a class has all the methods and attributes the type requires. Due to not checking typing, it only works in dynamically types languages like python.
 
   ***
 
@@ -331,19 +331,20 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > White, Green, Red, Yellow, Blank(Black) are defined in the smiley.py class
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > The colors are constant variables, signified by being named in all uppercase characters
      3. Add the color blue to the appropriate class using the appropriate format and values.
+        > BLUE = (0, 0, 255)
 
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > The colour variables are used in the smiley.py class, as well as the draw eyes function within the happy.py and sad.py classes 
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     > change the Y = self.YELLOW to Y = self.GREEN in smiley.py
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 
