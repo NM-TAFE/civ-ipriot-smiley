@@ -2,10 +2,9 @@ import time
 from smiley import Smiley
 from blinkable import Blinkable
 
-
-class Sad(Smiley, Blinkable):
+class Angry(Smiley, Blinkable):
     def __init__(self):
-        super().__init__(complexion=self.BLUE)
+        super().__init__(complexion=self.RED)
 
         self.draw_mouth()
         self.draw_eyes()
