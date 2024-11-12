@@ -92,8 +92,11 @@ Address the following tasks and questions based on the code provided in this rep
 2. Clone your repository locally
 3. Run the project locally by executing the `main.py` file
 4. Evidence this by providing screenshots of the project directory structure and the output of the `main.py` file
+* Output of main.py evidence:
+![main.py_output](.\docs\images\Q2.1_main.py_output.png)
 
-![Local Execution (INSERT YOUR SCREENSHOT)](screenshots/CREATE_A_SCREENSHOT_OF_YOUR_local_setup.png)
+* Project directory evidence:
+![project_directory](.\docs\images\Q2.1_project_directory.png)
 
 If you are running on a Raspberry Pi, you can use the following command to run the project and then screenshot the result:
 
@@ -108,68 +111,94 @@ python3 main.py
 
 1. Examine the code for the `smiley.py` file and provide  an example of a variable of each of the following types and their corresponding values (`_` should be replaced with the appropriate values):
 
-   | Type                    | name       | value          |
-   | ----------              | ---------- | -------------- |
-   | built-in primitive type | _          |  _             |
-   | built-in composite type | _          |  _             |
-   | user-defined type       | _          |  _             |
+   | Type                    | name   | value                   |
+   | ----------              |--------|-------------------------|
+   | built-in primitive type | dimmed | True (Boolean)          |
+   | built-in composite type | WHITE  | (255, 255, 255) (Tuple) |
+   | user-defined type       | Smiley | class                   |    
+    
 
 2. Fill in (`_`) the following table based on the code in `smiley.py`:
 
-   | Object                   | Type                    |
-   | ------------             | ----------------------- |
-   | self.pixels              | _                       |
-   | A member of self.pixels  | _                       |
-   | self                     | _                       |
+   | Object                   | Type                                                         |
+   | ------------             |--------------------------------------------------------------|
+   | self.pixels              | a list of tuples                                             |
+   | A member of self.pixels  | a tuple                                                      |
+   | self                     | instance of the class used to access attributes of the class |
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
-   | Control Flow | File       | First line  | Line range  |
-   | ------------ | ---------- | ----------- | ----------- |
-   |  sequence    |  _         | _           | _           |
-   |  selection   | _          | _           | _           |
-   |  iteration   | _          | _           | _           |
+   | Control Flow | File     | First line | Line range |
+   | ------------ |----------|------------|------------|
+   |  sequence    | happy.py | 39         | to line 43 |
+   |  selection   | sad.py   | 26         | to line 29 |
+   |  iteration   | happy.py | 21         | to line 22 |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
-   | Type                    | Used? | Example |
-   | ----------------------- | ----- | --------|
-   | int                     | _     | _          |
-   | float                   | _     | _          |
-   | str                     | _     | _          |
-   | bool                    | _     | _          |
+   | Type                    | Used? | Example                                              |
+   | ----------------------- |-------|------------------------------------------------------|
+   | int                     | yes   | pixel e.g. pixel in mouth                            |
+   | float                   | yes   | delay=0.25                                           |
+   | str                     | no    | NA but example of my own would be message = "Hello!" |
+   | bool                    | Yes   | dimmed=True , wide_open=True                         |
 
 5. Examining `smiley.py`, provide an example of a class variable and an instance variable (attribute). Explain **why** one is defined as a class variable and the other as an instance variable.
 
-> Your answer here
+> * class variable example: WHITE
 >
+> This class variable is shared across all instances of the class Smiley 
+> 
+>* instance variable example: self.pixels
+>
+> This instance variable is unique to the instance of the class Smiley
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
 
-   > Your answer here
+   > The constructor in general is `__init__()` method. This method is called when a new instance of the Happy class is created. 
+   > 
+   > In Happy the constructor is followed by `super().__init__()`. `super()` calls the method of the superclass. The superclass of Happy is Smiley then Blinkable. Happy inherits from these two classes and will initisialise the code from the super class prior to the subclass Happy. 
    >
 
    2. What statement(s) does it execute (consider the `super` call), and what is the result?
 
-   > Your answer here
-   >
+   > First of all it will excute the `__init__()` method from Smiley. This method is the initialisation for the frame of the face/ blank face with the 8x8 blank and yellow pixel display. 
+   > Statements:
+   > * self.sense_hat = SenseHat() creates an instance of SenseHat and assigns it to the instance variable self.sense_hat
+   > * line 15 and 16 assigns Y and 0 to self.(a colour for the pixels, yellow or blank)
+   > * line 18-25 is the 8x8 pixel display. 
+   > 
+   > 
+   >  Then moves to the Blinkable class, but there is no `__init__()` method so it does not initialise anything in Blinkable. 
+   > 
+   > Finally, happy `__init__()` is executed on lines 13 and 14.
+   > Statements: 
+   > * self.draw_mouth() This calls the draw_mouth method to blank out the mouth. 
+   > * self.draw_eyes() This calls the draw_eyes method to blank out the eye positions. 
+   >  
+
+
 
 ### Code style
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
    
-> Your answer here
->
+> The code is written in PEP 8 style. 
+> Looking at SenseHat the code also looks to be written in PEP8. 
+> The reason the code is the same style is because the Smiley class calls for SenseHat which is encapsulated where and instance of SenseHat is created in Smiley class. Maintaining consistent coding style across the linked codes helps ease of understanding the code, integration of the classes easier, uniformity for the developers to acoid confusion are just a few reasons. Also, the SenseHat is the code for the real hardware for the real LED light display whereas the other code we are using is for a simulated version. Having the same style code makes it easier to switch between the real and the simulated version.   
 
 2. List three aspects of this convention you see applied in the code.
 
-> Your answer here
+> * CamelCase lettering for the class names e.g. SenseHat 
+> * Method names lower case and seperated by underscores e.g. draw_mouth
+> * 4 space indentation style.  
 >
 
 3. Give two examples of organizational documentation in the code.
 
-> Your answer here
+> * Docstrings are used to explain what the functionality of the code is or give a specific instruction. e.g. in Happy.py line 8 states the functionality of the Happy class is "Provides a Smiley with a happy expression". There are also docstrings under the methods to explain the purpose of the method. e.g. in Happy, under the draw_mouth method, line 18 "Renders a mouth by blanking the pixels that form that object."
+> * Comments are used to give clarity on the line of code. e.g. in Smiley, line 12 "# We have encapsulated the SenseHat object". This lets the developer know the SenseHat instance has been created within Smiley but the code of SenseHat is hidden from the outside world. 
 >
 
 ### Identifying and understanding classes
