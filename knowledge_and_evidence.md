@@ -147,11 +147,11 @@ python3 main.py
 
 > * class variable example: WHITE
 >
-> This class variable is shared across all instances of the class Smiley 
+> This class variable is shared across all instances of the class Smiley and can be accessed from the class and instance of the class. 
 > 
 >* instance variable example: self.pixels
 >
-> This instance variable is unique to the instance of the class Smiley
+> This instance variable is unique to the instance of the class Smiley and can be accessed from the instance of the class but not a class attribute. 
 
 6. Examine `happy.py`, and identify the constructor (initializer) for the `Happy` class:
    1. What is the purpose of a constructor (in general) and this one (in particular)?
@@ -185,8 +185,8 @@ python3 main.py
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
    
 > The code is written in PEP 8 style. 
-> Looking at SenseHat the code also looks to be written in PEP8. 
-> The reason the code is the same style is because the Smiley class calls for SenseHat which is encapsulated where and instance of SenseHat is created in Smiley class. Maintaining consistent coding style across the linked codes helps ease of understanding the code, integration of the classes easier, uniformity for the developers to acoid confusion are just a few reasons. Also, the SenseHat is the code for the real hardware for the real LED light display whereas the other code we are using is for a simulated version. Having the same style code makes it easier to switch between the real and the simulated version.   
+> SenseHat is written in PEP8. This is evident when SenseHat is use in Smiley. It uses camel case as well as underscores to seperate words in variable names e.g.  self.sense_hat.low_light
+> The reason the code is the same style is because the Smiley class calls for SenseHat which is a composition of Smiley. SenseHat is a module that is imported by Smiley. Maintaining consistent coding style across the linked codes helps ease of understanding the code, integration of the classes easier, uniformity for the developers to avoid confusion are just a few reasons. Also, the SenseHat is the code for the real hardware for the real LED light display whereas the other code we are using is for a simulated version. Having the same style code makes it easier to switch between the real and the simulated version.   
 
 2. List three aspects of this convention you see applied in the code.
 
@@ -210,18 +210,25 @@ python3 main.py
   Use the following table for your answers:
 
 | Class Name | Super or Sub? | Direct parent(s) |
-| ---------- | ------------- | ---------------- |
-| NotReal    | Sub           | NotRealParent    |
-|   ...      |   ...         |      ...         |
+|------------|---------------|------------------|
+|  
+| Happy      | Sub           | Smiley           |
+| Smiley     | Super         | SenseHat         |    
+| Sad        | Sub           | Smiley           |    
+| Blinkable  | Super         | ABC              |    
+
 
 2. Explain the concept of abstraction, giving an example from the project (note "implementing an ABC" is **not** in itself an example of abstraction). (Max 150 words)
 
-> Your answer here
+> Abstraction is a way to simplify the code on the surface. Exposing what the class does but not how it is done. The how it is done is defined in the sub classes that are Blinkable. 
 >
+> In the Blinkable class, the blink method is defined and is an abstract method. This means that the subclasses that use Blinkable have the ability to blink. But the subclasses will define the behaviour of the blink.   
+> 
+> There is a blink method that is defined in happy and in main when an instance of Happy is created called smiley and blink is called this calls for the blink action created in Happy. 
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
-> Your answer here
+> The process of deriving from a super class to a sub class is inheritance. The main purpose of inheritance in this project is to reuse code from other classes. For example, Smiley is a super class and happy is a subclass. In question 2.2.6.ii I mentioned that the Happy initialisation method calls the initialisation method from Smiley. This is where Happy inherits the frame of the face/blank face from Smiley and the dim_display and show method. This is so the code does not have to be re-written in Happy and Sad.   
 >
 
 ### Compare and contrast classes
@@ -229,28 +236,36 @@ python3 main.py
 Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
-   > Your answer here
+   > * The pixels for the mouth are different in the draw_mouth method. The Sad class defines the pixels that draw a sad mouth and the Happy class defines the pixels that draw a smiley mouth. 
+   > 
+   > * Also the Blinkable behaviour is not present in the Sad class. There is no method for blink also Sad does not inherit from Blinkable like Happy does. 
    >
+
+
 2. What are the key similarities?
-   > Your answer here
+   > * Both Happy and Sad inherit from Smiley. 
+   > * Both have BLANK eyes wide_open and YELLOW eyes when closed. 
    >
 3. What difference stands out the most to you and why?
-   > Your answer here
+   > 
+   > Happy inherits from Blinkable as well as Smiley > `class Happy(Smiley, Blinkable):` However Sad does not inherit from Blinkable. Sad does not have the Blinkable functionality or a defined blink method. 
    >
 4. How does this difference affect the functionality of these classes
-   > Your answer here
+   > There is no blink method in Sad so it cannot blink. Whether it inherits from Blinkable or not does not matter. But inheriting from Blinkable ensures that Sad needs to have a blink method. Happy inherits from Blinkable giving it the ability to blink. Happy also defines a blink method to give it the instructions of how to blink and how long for.  
    >
 
 ### Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
-   > Your answer here
-   >
-2. Which of these classes directly interact with the SenseHat functionalities?
-   > Your answer here
-   >
+   > Smiley because the instance ` self.sense_hat = SenseHat()` of SenseHat is in the Smiley class and is assigned to the `self.sense_hat` attribute and methods are defined to control the SenseHat. 
+   > 
+   > As both Happy and Sad inherit from Smiley, they inturn utilise the functionality from SenseHat because they have access to the methods of `dim_display` and `show`. These are the methods that interact with the SenseHat. 
+   >  
+2. Which of the SenseHat's functionalities does it utilise?
+   > The functionalities of the SenseHat that are utilised is the intensity of the display (low or high) and showing the smiley on the screen by illuminating the pixels with a specific colour defined in self.pixels. Happy and Sad modify the pixels illuminated to draw a happy/sad mouth or blink (in Happy).    
+
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > Your answer here
+   > SenseHat is encapsulated within an instance `self.sense_hat = SenseHat()` in the Smiley class. This means that the SenseHat class cannot be accessed outside the Smiley class, it is protected from the outside. The two methods defined in Smiley allow for interaction with the SenseHat hardware through the instance of a SenseHat. Encapsulating the SenseHat within Smiley allows for a simplified code to interact with SenseHat. 
    >
 
 ### Sad Smileys Can’t Blink (Or Can They?)
@@ -261,7 +276,7 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
-> Your answer here
+> Your answer here 33 mins of lecture. 
 >
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
