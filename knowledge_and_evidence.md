@@ -367,19 +367,21 @@ Include a screenshot of the sad smiley or the modified `main.py`:
   1. **Defined Colors and Their Location:**
 
      1. Which colors are defined and in which class(s)?
-        > Your answer here
+        > The colours white, green, red, yellow and blank. They are defined in Smiley class.
+ 
      2. What type of variables hold these colors? Are the values expected to change during the program's execution? Explain your answer.
-        > Your answer here
+        > The variable type defining the colour in Smiley is a tuple. They are not going to change because they are a 'constant' defined by the variable name being written in uppercase.
+        They are also a class attribute and they are inherited by the Sad and Happy class that inherit from Smiley. 
      3. Add the color blue to the appropriate class using the appropriate format and values.
 
   2. **Usage of Color Variables:**
 
      1. In which classes are the color variables used?
-        > Your answer here
+        > In the `__init__` method of Smiley the defined colours yellow and blank are used to create the face shape/pixels. In the subclasses, Happy and Sad, the mouth area uses defined colours from Smiley to create the mouth and eyes by using blank colour/ pixels. 
 
   3. **Simple Method to Change Colors:**
   4. What is the easiest way you can think to change the smileys to green? Easiest, not necessarily the best!
-     > Your answer here
+     > Easiest way would be to change the default colour in the superclass. E.g.`Y = self.YELLOW` change to replace YELLOW with GREEN `Y = self.GREEN`. This will change all the smileys to green.  
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 
