@@ -324,11 +324,11 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 Include a screenshot of the sad smiley or the modified `main.py`:
 
-![Sad Smiley Blinking](screenshots/sad_blinking.png)
+![Sad Smiley Blinking](.\docs\images\CC_sad_smiley_screenshot.png)
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  > When it blinks it looks like it has no eyes as they are completely yellowed out. Could either change eye colour or only half close the blinking eye? 
 
   ### If It Walks Like a Duck…
 
