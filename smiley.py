@@ -40,7 +40,7 @@ class Smiley:
 
     def complexion(self):
         """
-
+        :return: Color to be used for the face
         """
         return self.GREEN
 
