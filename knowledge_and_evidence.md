@@ -276,22 +276,22 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
-> Your answer here 33 mins of lecture. 
+> No. Only Happy can blink. Sad cannot blink because it does not inherit from Blinkable, nor does it have a defined blink method. There is no blink method in the super class 'Smiley' therefore it is not inherited into Happy or Sad when the `super().__init__()` is called. 
 >
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> Your answer here
+> No. The blink method is defined in the subclass, therefore if Sad was to inherit from Blinkable, the blink method would still need to be defined in the Sad class and this can be different to how Happy blinks. Inheriting from Blinkable just ensures that the subclass is blinkable.  
 >
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
-> Your answer here
->
+> Polymorphism refers to many forms and in the context of 'blink' this means that the blink method inherited from Blinkable can take on many forms and therefore can be defined in each subclass to be different from the other. So the 'blink' method name in each subclass is related by the common superclass 'Blinkable'.  
+> For example, in Happy the delay of the blink close to blink open is 0.25 seconds. If a blink method was to be defined in Sad, this delay could be modified to keep the eyes closed longer to make the Smiley look sad. 
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
-> Your answer here
+> Inheritance is used in the blink method because the subclasses inherit the method called 'blink' defined in the Blinkable class. In the subclass, the blink method is then morphed to be specific to that type of Smiley.  
 >
 1. **Implement Blink in Sad Class:**
 
@@ -303,6 +303,20 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
    ```
 
 2. **Code Implementation:** Implement the code that allows the Sad smiley to blink. Use the implementation from the Happy Smiley as a reference. Ensure your new method functions similarly by controlling the blink duration through the `delay` argument.
+
+    ```python 
+     def blink(self, delay=0.25):
+        """
+       Blinks the smiley's eyes once
+
+        :param delay: Delay between blinks (in seconds)
+        """
+        self.draw_eyes(wide_open=False)
+        self.show()
+        time.sleep(delay)
+        self.draw_eyes(wide_open=True)
+        self.show()
+    ```
 
 3. **Testing the Implementation:**
 
