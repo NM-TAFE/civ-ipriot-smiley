@@ -7,22 +7,23 @@ class Smiley:
     RED = (255, 0, 0)
     YELLOW = (255, 255, 0)
     BLANK = (0, 0, 0)
+    BLUE = (0, 0, 255)
 
-    def __init__(self):
+    def __init__(self, complexion=YELLOW):
         # We have encapsulated the SenseHat object
         self.sense_hat = SenseHat()
-
-        C = self.complexion()
+        self.my_complexion = complexion
+        X = self.my_complexion
         O = self.BLANK
         self.pixels = [
-            O, C, C, C, C, C, C, O,
-            C, C, C, C, C, C, C, C,
-            C, C, C, C, C, C, C, C,
-            C, C, C, C, C, C, C, C,
-            C, C, C, C, C, C, C, C,
-            C, C, C, C, C, C, C, C,
-            C, C, C, C, C, C, C, C,
-            O, C, C, C, C, C, C, O,
+            O, X, X, X, X, X, X, O,
+            X, X, X, X, X, X, X, X,
+            X, X, X, X, X, X, X, X,
+            X, X, X, X, X, X, X, X,
+            X, X, X, X, X, X, X, X,
+            X, X, X, X, X, X, X, X,
+            X, X, X, X, X, X, X, X,
+            O, X, X, X, X, X, X, O,
         ]
 
     def dim_display(self, dimmed=True):
@@ -42,5 +43,5 @@ class Smiley:
         """
         :return: Color to be used for the face
         """
-        return self.GREEN
+        return self.my_complexion
 

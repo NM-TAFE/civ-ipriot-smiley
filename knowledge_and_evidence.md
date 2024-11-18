@@ -128,11 +128,11 @@ python3 main.py
 
 3. Examine the code for `smiley.py`, `sad.py`, and `happy.py`. Give an example of each of the following control structures using an example from **each** of these files. Include the first line and the line range:
 
-   | Control Flow | File     | First line | Line range |
-   | ------------ |----------|------------|------------|
-   |  sequence    | happy.py | 39         | to line 43 |
-   |  selection   | sad.py   | 26         | to line 29 |
-   |  iteration   | happy.py | 21         | to line 22 |
+   | Control Flow | File     | First line                          | Line range |
+   | ------------ |----------|-------------------------------------|------------|
+   |  sequence    | happy.py | 39  self.draw_eyes(wide_open=False) | to line 43 |
+   |  selection   | sad.py   | 27  if wide_open:              | to line 29 |
+   |  iteration   | happy.py | 21  for pixel in mouth:                                | to line 22 |
 
 4. Though everything in Python is an object, it is sometimes said to have four "primitive" types. Examining the three files `smiley.py`, `sad.py`, and `happy.py`, identify which of the following types are used in any of these files, and give an example of each (use an example from the code, if applicable, otherwise provide an example of your own):
 
@@ -391,11 +391,22 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Add a method called `complexion` to the `Smiley` class:** Implement this instance method to return `self.YELLOW`. Using the term "complexion" instead of "color" provides a more abstract terminology that focuses on the meaning rather than implementation.
 
+![Smiley Add Complexion](.\docs\images\CC_smiley_complexion.png)
+
+
   2. **Refactor subclasses to use the `complexion` method:** Modify any subclass that directly accesses the color variable to instead utilize the new `complexion` method. This ensures that color handling is centralized and can be easily modified in the future.
 
+![Sad Refactor](.\docs\images\CC_sad_git_refactor.png)
+
+![Happy Refactor](.\docs\images\CC_happy_git_refactor.png)
+
   3. **Determine the applicable Object-Oriented principle:** Consider whether Abstraction, Polymorphism, Inheritance, or Encapsulation best applies to the modifications made in this step.
+        > Abstraction. Because the details of the complexion (colour) is stored in the super class. The subclass just calls for the complexion method. The colour management is done by Smiley for the face.
+        >               
 
   4. **Verify the implementation:** Ensure that the modifications function as expected. The smileys should still display in yellow, confirming that the new method correctly replaces the direct color references.
+
+![Comlexion Remains Yellow](.\docs\images\CC_complexion_yellow.png)
 
   This step is crucial for setting up a more flexible system for color management in the smiley display logic, allowing for easy adjustments and extensions in the future.
 
@@ -405,18 +416,25 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   1. **Modify the `__init__()` method in the `Smiley` class:** Introduce a default argument named `complexion` and assign `YELLOW` as its default value. This allows the instantiation of smileys with customizable colors.
 
+![Add Complexion to __init__](.\docs\images\CC_complexion_default_yellow.png)
   2. **Introduce a new instance variable:** Create a variable called `my_complexion` and assign the `complexion` parameter to it. This step ensures that each smiley instance can maintain its own color state.
-
+![My Complexion Variable](.\docs\images\CC_my_complexion.png)
   3. **Rationale for `my_complexion`:** Using a distinct instance variable like `my_complexion` avoids potential conflicts with the method parameter names and clarifies that it is an attribute specific to the object.
 
   4. **Bulk rename:** We want to update our grid to use the value of complexion, but we have so many `Y`'s in the grid. Use your IDE's refactoring tool to rename all instances of the **symbol** `Y` to `X`. Where `X` is the value of the `complexion` variable. Include a screenshot evidencing you have found the correct refactor tool and the changes made.
 
-  ![Bulk Rename](screenshots/bulk_rename.png)
+> I had already manually changed all the Y's to C's previously. So I will now refactor from C to X. 
+> 
+> Before: ![Before Refactor](.\docs\images\CC_before_refactor.png)
+> 
+> After: ![After Refactor](.\docs\images\CC_after_refactor.png)
+ 
 
   5. **Update the `complexion` method:** Adjust this method to return `self.my_complexion`, ensuring that whatever color is assigned during instantiation is what the smiley displays.
 
   6. **Verification:** Run the updated code to confirm that Smileys still defaults to yellow unless specified otherwise.
 
+![Colour Check ](.\docs\images\CC_smiley_colour_check.png)
   ### Flexible Colors – Step 3
 
   With the foundational changes in place, it's now possible to implement varied smiley colors for different emotional expressions.
@@ -429,8 +447,9 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   2. **Test color functionality for the Sad smiley:** Execute the program to verify that the Sad smiley now appears blue.
 
+![Colour Check Blue Sad](.\docs\images\CC_blue_sad.png)
   3. **Ensure the Happy smiley remains yellow:** Confirm that changes to the Sad smiley do not affect the default color of the Happy smiley, which should still display in yellow.
-
+![Colour Check Yellow Happy](.\docs\images\CC_yellow_happy.png)
   4. **Design and Implement An Angry Smiley:** Create an Angry smiley class that inherits from the `Smiley` class. Set the color of the Angry smiley to red by passing `self.RED` as the `complexion` argument in the superclass call.
 
   ***
