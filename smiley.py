@@ -2,38 +2,32 @@ from sense_hat import SenseHat
 
 
 class Smiley:
-    WHITE = (255, 255, 255)
-    GREEN = (0, 255, 0)
-    RED = (255, 0, 0)
     YELLOW = (255, 255, 0)
+    RED = (255, 0, 0)
+    BLUE = (0, 0, 255)
     BLANK = (0, 0, 0)
 
-    def __init__(self):
-        # We have encapsulated the SenseHat object
-        self.sense_hat = SenseHat()
-
-        Y = self.YELLOW
-        O = self.BLANK
+    def __init__(self, complexion=None):
+        self.my_complexion = complexion or self.YELLOW  # Default to yellow if no color is provided
+        blank = self.BLANK
+        colour = self.my_complexion
+        # replaced y with colour and O with blank for readability
         self.pixels = [
-            O, Y, Y, Y, Y, Y, Y, O,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            Y, Y, Y, Y, Y, Y, Y, Y,
-            O, Y, Y, Y, Y, Y, Y, O,
+            blank, colour, colour, colour, colour, colour, colour, blank,
+            colour, colour, colour, colour, colour, colour, colour, colour,
+            colour, colour, colour, colour, colour, colour, colour, colour,
+            colour, colour, colour, colour, colour, colour, colour, colour,
+            colour, colour, colour, colour, colour, colour, colour, colour,
+            colour, colour, colour, colour, colour, colour, colour, colour,
+            colour, colour, colour, colour, colour, colour, colour, colour,
+            blank, colour, colour, colour, colour, colour, colour, blank,
         ]
+        self.sense_hat = SenseHat()  # Assuming mock or real SenseHat is available
 
-    def dim_display(self, dimmed=True):
-        """
-        Set the SenseHat's light intensity to low (True) or high (False)
-        :param dimmed: Dim the display if True, otherwise don't dim
-        """
-        self.sense_hat.low_light = dimmed
+    def complexion(self):
+        """Return the complexion (color) of the smiley."""
+        return self.my_complexion
 
     def show(self):
-        """
-        Show the smiley on the screen.
-        """
+        """Updates the pixels on the SenseHat (mock or real)."""
         self.sense_hat.set_pixels(self.pixels)
