@@ -1,25 +1,18 @@
-"""Demonstrates the use of the Smiley class and its subclasses.
-If you have access to a SenseHAT (either via a Raspberry Pi or a SenseHAT emulator), you can use the real SenseHAT class instead of the mock SenseHAT class.
-That is, delete the sense_hat.py file that is included in this bundle."""
-
-import time
-
 from happy import Happy
+from sad import Sad
+from angry import Angry
 
 def main():
-    smiley = Happy()
+    # Create an instance of Happy smiley
+    happy_smiley = Happy()  # This will use the default yellow complexion
+    happy_smiley.show()  # Display the smiley on the SenseHat (mock or real)
 
-    smiley.show()
+    # You can add other instances here to test other smiley expressions
+    sad_smiley = Sad()  # This will be blue
+    sad_smiley.show()
 
-    time.sleep(1)
+    angry_smiley = Angry()  # This will be red
+    angry_smiley.show()
 
-    smiley.blink()
-
-if __name__ == '__main__':
-    ############################################################
-    # Uncomment the lines below only if you have multi-processing issues
-    # from multiprocessing import freeze_support
-    # freeze_support()
-    ############################################################
+if __name__ == "__main__":
     main()
-

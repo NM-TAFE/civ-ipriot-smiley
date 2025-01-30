@@ -1,18 +1,18 @@
 from smiley import Smiley
-class Sad(Smiley):
+class Angry(Smiley):
     def __init__(self):
-        super().__init__(complexion=self.BLUE)  # Pass the blue complexion to the superclass
+        super().__init__(complexion=self.RED)  # Red complexion for Angry
         self.draw_mouth()
         self.draw_eyes()
 
     def draw_mouth(self):
-        """Blank out pixels to draw the sad mouth."""
+        """Draw a fierce angry mouth."""
         mouth = [49, 54, 42, 43, 44, 45]
         for pixel in mouth:
             self.pixels[pixel] = self.BLANK
 
     def draw_eyes(self, wide_open=True):
-        """Draw open or closed eyes."""
+        """Draw fierce eyes."""
         eyes = [10, 13, 18, 21]
         color = self.complexion()
         for pixel in eyes:
