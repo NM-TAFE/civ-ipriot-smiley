@@ -63,6 +63,8 @@ This document includes instructions and knowledge questions that must be complet
 ```markdown
 ![Example Running Code](screenshots/screenshot1.png)
 ```
+![Sample](screenshots/sample.png)
+> Note the `!`, and the use of a relative path.
 
 - You must upload the code into your GitHub repository.
 - While you can use a branch, your code should be in main when you submit.
