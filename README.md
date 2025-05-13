@@ -1,8 +1,10 @@
 # Smiley: Intro to OOP and IoT
+>
 > :warning: This assessment may be distributed in one of the following forms:
+>
 > - **GitHub Classrooms**: You will automatically receive a  copy of this repo on NMTAFE's org (if you don't know what GitHub Classrooms is, then your group is not using it 😉)
 > - **Blackboard**: There will be an assessment handout that may refer to parts or all of this repo
-> 
+>
 > Both versions are otherwise identical and require answering the same questions and performing the same tasks.  
 
 This assessment demonstrates your understanding of processes and techniques related to object-oriented programming, including the concepts and language. The assessment consists of a knowledge-based and practical component.
@@ -16,10 +18,9 @@ The project will help you demonstrate and cement your understanding of the four 
 3. **Inheritance**: by subclassing a common Smiley class
 4. **Encapsulation**: protect the internal state of objects
 
-
 ## Working on this project
 
-If using GitHub Classrooms, use the repository uniquely allocated to you. 
+If using GitHub Classrooms, use the repository uniquely allocated to you.
 Otherwise,you **must** work against your forked version of this repository:
 
 1. From the top-right corner, select **Fork** and follow the prompts.
@@ -58,7 +59,7 @@ python -m venv .venv
 9. Modify the code based on the [assessment requirements](knowledge_and_evidence.md)
 
 ---
-**Recommended:**    
+**Recommended:**
 10. Stage the modifications you made:
 
 ```bash
@@ -80,14 +81,12 @@ git commit -m "Complete portfolio activity"
 git push -u origin por1
 ```
 
-**End of recommended section**
+11. Merge the changes to the `main` branch either via a pull request on GitHub or via the command line:  
 
-11. Submit your work as per the assessment instructions on Blackboard. You can use GitHub to create a `zip` of your project if you followed the recommended steps previously.
-
-------
-### Oh fork: what to do if you didn't fork
-
-> Also, what is a fork anyway?
+```bash
+git switch main
+git merge por1
+```
 
 A fork creates a personal copy of a repository on your own GitHub account.
 What makes the fork a fork (rather than a plain old copy) is that the fork
@@ -180,7 +179,6 @@ Remember, in Python, everything is an object!
 So a dog **has a** `name` string and a dog **has a** `breed` string. Thus, a dog is **composed** of two strings: name and breed!
 
 It is the same for any other object, including our own: when we create an instance of a class in another instance of the class, we are now composing one object from another.
-
 
 ##### Exercise
 
