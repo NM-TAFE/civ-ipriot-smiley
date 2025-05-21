@@ -3,19 +3,19 @@ from blinkable import Blinkable
 from smiley import Smiley
 
 
-class Sad(Smiley, Blinkable):
+class Angry(Smiley, Blinkable):
     """
-    Provides Smiley with sad face.
+    Provides Smiley with angry face.
     """
     def __init__(self):
-        super().__init__(complexion=self.BLUE)
+        super().__init__(complexion=self.RED)
 
         self.draw_mouth()
         self.draw_eyes()
 
     def draw_mouth(self):
         """
-        Draws the mouth feature on a smiley
+        Draws mouth on face.
         """
         mouth = [49, 54, 42, 43, 44, 45]
         for pixel in mouth:
@@ -23,10 +23,9 @@ class Sad(Smiley, Blinkable):
 
     def draw_eyes(self, wide_open=True):
         """
-        Draws open or closed eyes on a smiley
-        :param wide_open: Render eyes wide open or shut
+        Draws squinting angry eyes
         """
-        eyes = [10, 13, 18, 21]
+        eyes = [17, 22, 26, 29]
         for pixel in eyes:
             if wide_open:
                 eyes = self.BLANK
@@ -34,9 +33,9 @@ class Sad(Smiley, Blinkable):
                 eyes = self.my_complexion
             self.pixels[pixel] = eyes
 
-    def blink(self, delay=2):
+    def blink(self, delay=0.15):
         """
-        Blinks and closes eyes longer
+        Blinks and closes eyes faster
         """
         self.draw_eyes(wide_open=False)
         self.show()

@@ -3,6 +3,8 @@ If you have access to a SenseHAT (either via a Raspberry Pi or a SenseHAT emulat
 That is, delete the sense_hat.py file that is included in this bundle."""
 
 import time
+
+from angry import Angry
 from happy import Happy
 from sad import Sad
 
@@ -10,6 +12,8 @@ def main():
     smiley = Happy()
 
     smiley = Sad()
+
+    smiley = Angry()
 
     smiley.show()
 
