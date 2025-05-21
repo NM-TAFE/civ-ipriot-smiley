@@ -189,36 +189,37 @@ python3 main.py
 
 3. What is the name of the process of deriving from base classes? What is its purpose in this project? (Max 150 words)
 
-> Inheritance is the process of deriving from a base class. The purpose of using it in this project is to reduce repetitive code when creating a smiley face with different expressions. When inheritance is used, the different emotions can inherit from the smiley base’s attributes such as the head and colour and the focus of subclass can be on the different eyes and mouth to change the expressions.
+> Inheritance is the process of deriving from a base class. The purpose of using it in this project is to reduce repetitive code when creating a smiley face with different expressions. 
+> When inheritance is used, the different emotions can inherit from the smiley base’s attributes such as the head and colour and the focus of subclass can be on the different eyes and mouth to change the expressions.
 
 ### Compare and contrast classes
 
 Compare and contrast the classes Happy and Sad.
 
 1. What is the key difference between the two classes?
-   > Your answer here
+   > The Happy class inherits Blinkable and can blink where as the Sad class does not, and cannot blink. 
    >
 2. What are the key similarities?
-   > Your answer here
-   >
+   > The Happy and Sad classes both inherit from the Smiley base class. They both have draw_mouth and draw_eyes methods.
 3. What difference stands out the most to you and why?
-   > Your answer here
-   >
+   > The difference that stands out the most is the sad class not being able to blink and how the sad and happy mouth are drawn differently by making different pixels become blank.
 4. How does this difference affect the functionality of these classes
-   > Your answer here
-   >
+   > The difference affects the functionality of these classes because only Happy can blink and Sad remains simple with no blinks. 
+   > Happy would show a smiling mouth where as the Sad should show a frowning mouth.
 
 ### Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
-   > Your answer here
-   >
+   > The Smiley, Happy and Sad classes utilizes the functionality of the SenseHat because the Smiley holds the attribute to use the SenseHat. The Happy and Sad then inherits that attribute from the Smiley class.
 2. Which of these classes directly interact with the SenseHat functionalities?
-   > Your answer here
-   >
+   > The base Smiley class interacts with the functionality of the SenseHat directly by initializing it.
 3. Discuss the hiding of the SenseHAT in terms of encapsulation (100-200 Words)
-   > Your answer here
-   >
+   > The hiding of the SenseHat is done by encapsulation in the Smiley class. 
+   > This happens by creating the SenseHat() object only inside the Smiley class and not passing it around. 
+   > This then restricts other classes like Happy and Sad from seeing or accessing the SenseHat directly. 
+   > Instead, through inheritance, they can call Smiley’s methods like .show() or .dim_display() which handle the SenseHat for them. 
+   > This helps because it keeps the code more modular, clean, and easier to work with. Therefore, if something breaks with the display because of the SenseHat, 
+   > we only need to fix it in one place, the Smiley class, instead of fixing it everywhere it’s used.
 
 ### Sad Smileys Can’t Blink (Or Can They?)
 
@@ -228,22 +229,19 @@ Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does n
 
 1. Does the code's author believe that every `Smiley` should be able to blink? Explain.
 
-> Your answer here
->
+> No because they could have made the parent class (Smiley) have the blink attribute for all Smiley’s created, but didn’t. Instead, it’s made so that only some smileys (Happy) can blink from the inherited Blinkable class.
 
 2. For those smileys that blink, does the author expect them to blink in the same way? Explain.
 
-> Your answer here
->
+> The author does not expect them to blink in the same way because they set a parameter to accept different blinking times instead of setting one blink time in the function.
 
 3. Referring to the implementation of blink in the Happy and Sad Smiley classes, give a brief explanation of what polymorphism is.
 
-> Your answer here
->
+> Polymorphism means different classes can have the same function name but do different things. For example, only Happy has a blink() function with the delay time. If we make a different smiley with its own blink style, we can still use the same name, blink() with a different delay time. Therefore, the same function can be used to create different blink styles.
 
 4. How is inheritance used in the blink method, and why is it important for polymorphism?
 
-> Your answer here
+> Inheritance is used to allow the Happy class to inherit from Smiley and access Blinkable. The Happy class can then write it’s own version of blink() by having a different delay amount. Therefore, polymorphism occurs due to the occurrence of different classes having the same method name (like blink) but doing it in their own way.
 >
 1. **Implement Blink in Sad Class:**
 
@@ -266,7 +264,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
 - Observe and document the Sad smiley as it blinks its eyes. Describe any adjustments or issues encountered during implementation.
 
-  > Your answer here
+  > The Sad smiley’s blink was implemented by adding the blink method, importing time, importing Blinkable, and setting Blinkable as parameter in the Sad class. Then setting smiley to be Sad(). The result was a longer pause before the eyes open again due to the blink delay being adjusted longer to 2 seconds.
 
   ### If It Walks Like a Duck…
 
