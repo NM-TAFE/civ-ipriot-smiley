@@ -159,16 +159,13 @@ python3 main.py
 
 Compare and contrast the classes Happy and Sad.
 
-1. What is the key difference between the two classes?
+1. What are the key differences (2-3) between the two classes?
    > Your answer here
    >
-2. What are the key similarities?
+2. Of these, which is the most significant and why?
    > Your answer here
    >
-3. What difference stands out the most to you and why?
-   > Your answer here
-   >
-4. How does this difference affect the functionality of these classes
+3. How does this difference affect the functionality of these classes (if at all)?
    > Your answer here
    >
 
