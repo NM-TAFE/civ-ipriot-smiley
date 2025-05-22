@@ -1,60 +1,17 @@
-<style>
-
-body {
-    counter-reset: h2counter;
-}
-
-/* H1 - No numbering */
-h1 {
-    /* No counter reset or increment */
-}
-
-/* H2 - Level 1 numbering */
-h2 {
-    counter-reset: h3counter;
-}
-
-h2::before {
-    counter-increment: h2counter;
-    content: counter(h2counter) ". ";
-}
-
-/* H3 - Level 2 numbering */
-h3 {
-    counter-reset: h4counter;
-}
-
-h3::before {
-    counter-increment: h3counter;
-    content: counter(h2counter) "." counter(h3counter) " ";
-}
-
-/* H4 - Level 3 numbering (optional) */
-h4 {
-    counter-reset: h5counter;
-}
-
-h4::before {
-    counter-increment: h4counter;
-    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) " ";
-}
-
-</style>
-
 # Evidence and Knowledge
 
 This document includes instructions and knowledge questions that must be completed to receive a *Competent* grade on this portfolio task.
 
-## Required evidence
+## 1. Required evidence
 
-### Answer all questions in this document
+### 1.1. Answer all questions in this document
 
 - Each answer should be complete, well-articulated, and within the specified word count limits (if added) for each question.
 - Please make sure **all** external sources are properly cited.
 - You must **use your own words**. Please include your full chat transcripts if you use generative AI in any way.
 - Generative AI hallucinates, is not an authoritative source
 
-### Make all the required modifications to the code
+### 1.2. Make all the required modifications to the code
 
 - Please follow the instructions in this document to make the changes needed to the code.
 
@@ -64,29 +21,32 @@ This document includes instructions and knowledge questions that must be complet
 ![Example Running Code](screenshots/screenshot1.png)
 ```
 
+![Sample](screenshots/sample.png)
+> Note the `!`, and the use of a relative path.
+
 - You must upload the code into your GitHub repository.
 - While you can use a branch, your code should be in main when you submit.
 - Upload a zip of this repository to Blackboard when you are ready to submit.
 - You will be notified of your result via Blackboard
 - However, if using GitHub classrooms, you may also receive additional feedback on GitHub directly
 
-### Optional: Use of Raspberry Pi and SenseHat
+### 1.3. Optional: Use of Raspberry Pi and SenseHat
 
 Raspberry Pi or SenseHat is **optional** for this activity. You can use the included `sense_hat.py` file to simulate the SenseHat on your computer.
 
 If you use a Pi, please **delete** the `sense_hat.py` file.
 
-### Accessible version of the code
+### 1.4. Accessible version of the code
 
 This project relies on visual patterns that appear on an LED matrix. If you have any accessibility requirements, you can use the `udl/accessible` branch to complete the project. This branch provides an accessible code version that uses text-based patterns instead of visual ones.
 
 Please discuss this with your lecturer before using that branch.
 
-## Specific Tasks & Questions
+## 2. Specific Tasks & Questions
 
 Address the following tasks and questions based on the code provided in this repository.
 
-### Set up the project locally
+### 2.1. Set up the project locally
 
 1. Fork this repository (if not using GitHub Classrooms)
 2. Clone your repository locally
@@ -102,7 +62,7 @@ ls
 python3 main.py
 ```
 
-### Fundamental code comprehension
+### 2.2. Fundamental code comprehension
 
  Answer each of the following questions **as they relate to that code** supplied by in this repository (ignore `sense_hat.py`):
 
@@ -152,10 +112,10 @@ python3 main.py
 
    > It executes by making the parent (Smiley) blink
 
-### Code style
+### 2.3. Code style
 
 1. What code style is used in the code? Is it likely to be the same as the code style used in the SenseHat? Give to reasons as to why/why not:
-   
+
 > The code style uses PEP8 as it implements the correct strategies such as the usage of single whitespaces after commas, single whitespaces on each side of the variable assignment operator, use of 4 spaces per indentation level. etc. It is likely to be the same code style as SenseHat because it implements the same PEP8 strategies.
 
 2. List three aspects of this convention you see applied in the code.
@@ -166,7 +126,7 @@ python3 main.py
 
 > In main.py file, the lines 1-3 documents the instruction to delete the sense.hat.py file if you already have a SenseHAT emulator. The code also includes a LICENSE document on usage and distribution of the program.
 
-### Identifying and understanding classes
+### 2.4. Identifying and understanding classes
 
 > Note: Ignore the `sense_hat.py` file when answering the questions below
 
@@ -192,7 +152,7 @@ python3 main.py
 > Inheritance is the process of deriving from a base class. The purpose of using it in this project is to reduce repetitive code when creating a smiley face with different expressions. 
 > When inheritance is used, the different emotions can inherit from the smiley base’s attributes such as the head and colour and the focus of subclass can be on the different eyes and mouth to change the expressions.
 
-### Compare and contrast classes
+### 2.5. Compare and contrast classes
 
 Compare and contrast the classes Happy and Sad.
 
@@ -207,7 +167,7 @@ Compare and contrast the classes Happy and Sad.
    > The difference affects the functionality of these classes because only Happy can blink and Sad remains simple with no blinks. 
    > Happy would show a smiling mouth where as the Sad should show a frowning mouth.
 
-### Where is the Sense(Hat) in the code?
+### 2.6. Where is the Sense(Hat) in the code?
 
 1. Which class(es) utilize the functionality of the SenseHat?
    > The Smiley, Happy and Sad classes utilizes the functionality of the SenseHat because the Smiley holds the attribute to use the SenseHat. The Happy and Sad then inherits that attribute from the Smiley class.
@@ -221,7 +181,7 @@ Compare and contrast the classes Happy and Sad.
    > This helps because it keeps the code more modular, clean, and easier to work with. Therefore, if something breaks with the display because of the SenseHat, 
    > we only need to fix it in one place, the Smiley class, instead of fixing it everywhere it’s used.
 
-### Sad Smileys Can’t Blink (Or Can They?)
+### 2.7. Sad Smileys Can’t Blink (Or Can They?)
 
 Unlike the `Happy` smiley, the current implementation of the `Sad` smiley does not possess the ability to blink. Let's first explore how blinking has been implemented in the Happy Smiley by examining the blink() method, which takes one argument that determines the duration of the blink.
 
@@ -266,7 +226,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   > The Sad smiley’s blink was implemented by adding the blink method, importing time, importing Blinkable, and setting Blinkable as parameter in the Sad class. Then setting smiley to be Sad(). The result was a longer pause before the eyes open again due to the blink delay being adjusted longer to 2 seconds.
 
-  ### If It Walks Like a Duck…
+  ### 2.8. If It Walks Like a Duck…
 
   Previously, you implemented the blink functionality for the Sad smiley without utilizing the class `Blinkable`. Assuming you did not use `Blinkable` (even if you actually did), consider how the Sad smiley could blink similarly to the Happy smiley without this specific class.
 
@@ -292,9 +252,9 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   ***
 
-  ## Refactoring
+  ## 3. Refactoring
 
-  ### Does a Smiley Have to Be Yellow?
+  ### 3.1. Does a Smiley Have to Be Yellow?
 
   While our current implementation predominantly features yellow smileys, emotional expressions like sickness or anger typically utilize colors like green, red, or orange. We'll explore the feasibility of integrating these colors into our smileys.
 
@@ -317,7 +277,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   Here's a revised version of the "Flexible Colors – Step 1" section for the smiley project, incorporating your specifications for formatting and content updates:
 
-  ### Flexible Colors – Step 1
+  ### 3.2. Flexible Colors – Step 1
 
   Changing the color of the smileys once is straightforward, but it isn't very flexible. To facilitate various colors for smileys, it is advisable not to hardcode values in any class. This approach was identified earlier as a necessary change. Let's start by removing the built-in assumptions about color in our classes.
 
@@ -331,7 +291,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   This step is crucial for setting up a more flexible system for color management in the smiley display logic, allowing for easy adjustments and extensions in the future.
 
-  ### Flexible Colors – Step 2
+  ### 3.3. Flexible Colors – Step 2
 
   Having removed the hardcoded color values, we now enhance the base class to support dynamic color assignments more effectively.
 
@@ -349,7 +309,7 @@ Include a screenshot of the sad smiley or the modified `main.py`:
 
   6. **Verification:** Run the updated code to confirm that Smileys still defaults to yellow unless specified otherwise.
 
-  ### Flexible Colors – Step 3
+  ### 3.4. Flexible Colors – Step 3
 
   With the foundational changes in place, it's now possible to implement varied smiley colors for different emotional expressions.
 
